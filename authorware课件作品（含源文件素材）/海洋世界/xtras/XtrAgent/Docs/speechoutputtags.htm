@@ -1,0 +1,454 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>XtrAgent Speech Output Tags</title>
+</head>
+
+<body>
+<font SIZE="2">
+
+<h1 align="left"></font><font face="Comic Sans MS" size="7"><strong>XtrAgent</strong></font><b><font
+face="Comic Sans MS" size="6">&#153;</font><font size="7"> </font></b><font
+face="Comic Sans MS" size="6"><strong>Speech Output Tags</strong></font></h1>
+<b>
+
+<p></b><font face="Comic Sans MS">Developed by Tomer Berda, Copyright (C) DirectXtras <small><small><small>LLC</small></small></small>.
+1998. </font></p>
+
+<p><font face="Comic Sans MS">Last updated: 6.1.98</font></p>
+
+<p>&nbsp;</p>
+<font FACE="VERDANA,ARIAL,HELVETICA" SIZE="2">
+
+<p></font><font face="Times New Roman" size="3">The Microsoft Agent services support
+modifying speech output through special tags inserted in the speech text string. These
+tags help you change the characteristics of the output expression of the character. </font></p>
+
+<p><font face="Times New Roman" size="3">Speech output tags use the following rules of
+syntax:</font> 
+
+<ul>
+  <li><font face="Times New Roman" size="3">All tags begin and end with a backslash character
+    (\).</font></li>
+  <li><font face="Times New Roman" size="3">The single backslash character is not enabled <i>within</i>
+    a tag. To include a backslash character in a text parameter of a tag, use a double
+    backslash (\\).</font></li>
+  <li><font face="Times New Roman" size="3">Tags are case-insensitive. For example, \pit\ is
+    the same as \PIT\.</font></li>
+  <li><font face="Times New Roman" size="3">Tags are whitespace-dependent. For example, \Rst\
+    is not the same as \&nbsp;Rst&nbsp;\. </font></li>
+</ul>
+
+<p><font face="Times New Roman" size="3">Unless otherwise specified or modified by another
+tag, the speech output retains the characteristic set by the tag within the text specified
+in a single <a href="xa_doc.htm#Say"><b>Say</b></a> method. Speech output is automatically
+reset through the user-defined parameters after a <a href="xa_doc.htm#Say"><b>Say</b></a>
+method is completed.</font></p>
+
+<p><font face="Times New Roman" size="3">Some tags include quoted strings. This means that
+you have to use two quote marks to designate the tag's parameter or concatenate a
+double-quote character as part of the string. The latter is shown in this example:</font></p>
+
+<p><font face="Times New Roman" size="3">Set Genie=Sprite 1</font></p>
+
+<p><font face="Times New Roman" size="3">Say (Genie, &quot;This is
+\map=&quot;&amp;QUOTE&amp;&quot;Spoken
+Text&quot;&amp;QUOTE&amp;&quot;=&quot;&amp;QUOTE&amp;&quot;Balloon
+text&quot;&amp;QUOTE&amp;&quot;\.&quot;)</font></p>
+
+<p><font face="Times New Roman" size="3">The following tags are supported: </font></p>
+
+<p><font face="Times New Roman" size="3"><a HREF="#CHR"><b>Chr</b></a>, <a HREF="#CTX"><b>Ctx</b></a>,
+<a HREF="#EMP"><b>Emp</b></a>, <a HREF="#LST"><b>Lst</b></a>, <a HREF="#MAP"><b>Map</b></a>,
+<a HREF="#MRK"><b>Mrk</b></a>, <a HREF="#PAU"><b>Pau</b></a>, <a HREF="#PIT"><b>Pit</b></a>,
+<a HREF="#RST"><b>Rst</b></a>, <a HREF="#SPD"><b>Spd</b></a>, <a HREF="#VOL"><b>Vol</b> </a></font></p>
+
+<p><font face="Times New Roman" size="3">The tags are primarily designed for adjusting
+text-to-speech (TTS)-generated output. Only the <b>Mrk</b> and <b>Map</b> tags can be used
+with sound file-based spoken output. </font></p>
+
+<p><font face="Times New Roman" size="3"><b>Note:</b> Microsoft Agent does not support all
+the tags documented in the Microsoft Speech SDK. Parameters may also vary depending on the
+TTS engine installed. </font></p>
+
+<h5><font face="Times New Roman"><a name="CHR"></a>Chr Tag</font></h5>
+
+<p><font face="Times New Roman"><b>Description</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">Sets the character of the voice.</font></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Syntax</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">\<b>Chr</b>=<i>string</i>\</font></p>
+</blockquote>
+
+<blockquote>
+  <table WIDTH="87%" BORDER="1" CELLPADDING="5" CELLSPACING="0">
+    <tr VALIGN="TOP" BGCOLOR="#DDDDDD">
+      <td><font face="Times New Roman"><b>Part</b></font></td>
+      <td><font face="Times New Roman"><b>Description</b></font></td>
+    </tr>
+    <tr VALIGN="TOP">
+      <td><font face="Times New Roman"><i>string</i></font></td>
+      <td><font face="Times New Roman">A string specifying the character of the voice. </font><p><font
+      face="Times New Roman"><b>&quot;Normal&quot;</b> (Default) A normal tone of voice. </font></p>
+      <p><font face="Times New Roman"><b>&quot;Monotone&quot;</b> A monotone voice. </font></p>
+      <p><font face="Times New Roman"><b>&quot;Whisper&quot;</b> A whispered voice. </font></td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Remarks</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">This tag is supported only for TTS-generated output. The
+  range of values for the parameter may vary depending on the installed TTS engine.</font></p>
+</blockquote>
+
+<hr>
+
+<h5><font face="Times New Roman"><a name="CTX"></a>Ctx Tag</font></h5>
+
+<p><font face="Times New Roman"><b>Description</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">Sets the context of the output text.</font></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Syntax</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">\<b>Ctx</b>=<i>string</i>\</font></p>
+</blockquote>
+
+<blockquote>
+  <table WIDTH="87%" BORDER="1" CELLPADDING="5" CELLSPACING="0">
+    <tr VALIGN="TOP" BGCOLOR="#DDDDDD">
+      <td><font face="Times New Roman"><b>Part</b></font></td>
+      <td><font face="Times New Roman"><b>Description</b></font></td>
+    </tr>
+    <tr VALIGN="TOP">
+      <td><font face="Times New Roman"><i>string</i></font></td>
+      <td><font face="Times New Roman">A string specifying the context of the text that follows,
+      which determines how symbols or abbreviations are spoken. </font><p><font
+      face="Times New Roman"><b>&quot;Address&quot;</b> Addresses and/or phone numbers. </font></p>
+      <p><font face="Times New Roman"><b>&quot;Email&quot;</b> Electronic mail. </font></p>
+      <p><font face="Times New Roman"><b>&quot;Unknown&quot;</b> (Default) Context is unknown. </font></td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Remarks</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">This tag is supported only for TTS-generated output. The
+  range of values for the parameter may vary depending on the installed TTS engine.</font></p>
+</blockquote>
+
+<hr>
+
+<h5><font face="Times New Roman"><a name="EMP"></a>Emp Tag</font></h5>
+
+<p><font face="Times New Roman"><b>Description</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">Emphasizes the next word spoken. This tag must immediately
+  precede the word.</font></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Syntax</b> </font></p>
+
+<blockquote>
+  <b><p><font face="Times New Roman">\Emp\</font></b></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Remarks</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">This tag is supported only for TTS-generated output. The
+  range of values for the parameter may vary depending on the installed TTS engine.</font></p>
+</blockquote>
+
+<hr>
+
+<h5><font face="Times New Roman"><a name="LST"></a>Lst Tag</font></h5>
+
+<p><font face="Times New Roman"><b>Description</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">Repeats last spoken statement for the character.</font></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Syntax</b> </font></p>
+
+<blockquote>
+  <b><p><font face="Times New Roman">\Lst\</font></b></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Remarks</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">This tag enables a character repeat its last spoken
+  statement. This tag must appear by itself in the <a href="xa_doc.htm#Say"><b>Say</b></a>
+  method; no other text or parameters can be included. When the spoken text is repeated, any
+  other tags included in the original text are repeated, except for bookmarks. Any .WAV and
+  .LWV files included in the text are also repeated.</font></p>
+</blockquote>
+
+<hr>
+
+<h5><a name="MAP"></a><font face="Times New Roman">Map Tag</font></h5>
+
+<p><font face="Times New Roman"><b>Description</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">Maps spoken text to text displayed in the word balloon.</font></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Syntax</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">\<b>Map</b>=&quot;<i>spokentext&quot;</i>=&quot;<i>balloontext&quot;</i>\</font></p>
+</blockquote>
+
+<blockquote>
+  <table WIDTH="87%" BORDER="1" CELLPADDING="5" CELLSPACING="0">
+    <tr VALIGN="TOP" BGCOLOR="#DDDDDD">
+      <td><font face="Times New Roman"><b>Part</b></font></td>
+      <td><font face="Times New Roman"><b>Description</b></font></td>
+    </tr>
+    <tr VALIGN="TOP">
+      <td><font face="Times New Roman"><i>spokentext</i></font></td>
+      <td><font face="Times New Roman">A string specifying the text for spoken output. </font></td>
+    </tr>
+    <tr VALIGN="TOP">
+      <td><font face="Times New Roman"><i>balloontext</i></font></td>
+      <td><font face="Times New Roman">A string specifying the text for word balloon output. </font></td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Remarks</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">This tag enables you to use different spoken text than
+  that displayed in the word balloon. </font></p>
+</blockquote>
+
+<hr>
+
+<h5><a name="MRK"></a><font face="Times New Roman">Mrk Tag</font></h5>
+
+<p><font face="Times New Roman"><b>Description</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">Defines a bookmark in the spoken text.</font></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Syntax</b> </font></p>
+
+<blockquote>
+  <b><p><font face="Times New Roman">\Mrk=</b><i>number</i><b>\</b></font></p>
+</blockquote>
+
+<blockquote>
+  <table WIDTH="87%" BORDER="1" CELLPADDING="5" CELLSPACING="0">
+    <tr VALIGN="TOP" BGCOLOR="#DDDDDD">
+      <td><font face="Times New Roman"><b>Part</b></font></td>
+      <td><font face="Times New Roman"><b>Description</b></font></td>
+    </tr>
+    <tr VALIGN="TOP">
+      <td><font face="Times New Roman"><i>number</i></font></td>
+      <td><font face="Times New Roman">A Long integer value that identifies the bookmark. </font></td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Remarks</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">When the server processes a bookmark, it generates a
+  bookmark event. You must specify a number greater than zero (0) and not equal to
+  2147483647 or 2147483646.</font></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>See Also</b> </font></p>
+
+<blockquote>
+  <b><p><font face="Times New Roman"><a HREF="xa_doc.htm#Bookmark">Bookmark</a></b> event</font></p>
+</blockquote>
+
+<hr>
+
+<h5><font face="Times New Roman"><a name="PAU"></a>Pau Tag</font></h5>
+
+<p><font face="Times New Roman"><b>Description</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">Pauses speech for the specified number of milliseconds.</font></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Syntax</b> </font></p>
+
+<blockquote>
+  <b><p><font face="Times New Roman">\Pau=</b><i>number</i><b>\</b></font></p>
+</blockquote>
+
+<blockquote>
+  <table WIDTH="87%" BORDER="1" CELLPADDING="5" CELLSPACING="0">
+    <tr VALIGN="TOP" BGCOLOR="#DDDDDD">
+      <td><font face="Times New Roman"><b>Part</b></font></td>
+      <td><font face="Times New Roman"><b>Description</b></font></td>
+    </tr>
+    <tr VALIGN="TOP">
+      <td><font face="Times New Roman"><i>number</i></font></td>
+      <td><font face="Times New Roman">The number of milliseconds to pause. </font></td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Remarks</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">This tag is supported only for TTS-generated output. The
+  range of values for the parameter may vary depending on the installed TTS engine. The
+  speech engine supplied with Microsoft Agent supports values from 10 (0.01sec) to 2550
+  (2.55sec). </font></p>
+</blockquote>
+
+<hr>
+
+<h5><font face="Times New Roman"><a name="PIT"></a>Pit Tag</font></h5>
+
+<p><font face="Times New Roman"><b>Description</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">Sets the baseline pitch of the output to the specified
+  value in hertz.</font></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Syntax</b> </font></p>
+
+<blockquote>
+  <b><p><font face="Times New Roman">\Pit=</b><i>number</i><b>\</b></font></p>
+</blockquote>
+
+<blockquote>
+  <table WIDTH="87%" BORDER="1" CELLPADDING="5" CELLSPACING="0">
+    <tr VALIGN="TOP" BGCOLOR="#DDDDDD">
+      <td><font face="Times New Roman"><b>Part</b></font></td>
+      <td><font face="Times New Roman"><b>Description</b></font></td>
+    </tr>
+    <tr VALIGN="TOP">
+      <td><font face="Times New Roman"><i>number</i></font></td>
+      <td><font face="Times New Roman">The pitch in hertz. </font></td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Remarks</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">This tag is supported only for TTS-generated output. The
+  range of values for the parameter may vary depending on the installed TTS engine. The
+  speech engine supplied with Microsoft Agent supports values from 50 to 400. </font></p>
+</blockquote>
+
+<hr>
+
+<h5><font face="Times New Roman"><a name="RST"></a>Rst Tag</font></h5>
+
+<p><font face="Times New Roman"><b>Description</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">Resets all tags to the default settings.</font></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Syntax</b> </font></p>
+
+<blockquote>
+  <b><p><font face="Times New Roman">\Rst\</font></b></p>
+</blockquote>
+
+<hr>
+
+<h5><font face="Times New Roman"><a name="SPD"></a>Spd Tag</font></h5>
+
+<p><font face="Times New Roman"><b>Description</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">Sets the baseline average talking speed of the speech
+  output.</font></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Syntax</b> </font></p>
+
+<blockquote>
+  <b><p><font face="Times New Roman">\Spd=</b><i>number</i><b>\</b></font></p>
+</blockquote>
+
+<blockquote>
+  <table WIDTH="87%" BORDER="1" CELLPADDING="5" CELLSPACING="0">
+    <tr VALIGN="TOP" BGCOLOR="#DDDDDD">
+      <td><font face="Times New Roman"><b>Part</b></font></td>
+      <td><font face="Times New Roman"><b>Description</b></font></td>
+    </tr>
+    <tr VALIGN="TOP">
+      <td><font face="Times New Roman"><i>number</i></font></td>
+      <td><font face="Times New Roman">Baseline average talking speed, in words per minute. </font></td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Remarks</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">This tag is supported only for TTS-generated output. The
+  range of values for the parameter may vary depending on the installed TTS engine. The
+  speech engine supplied with Microsoft Agent supports values from 50 to 250.</font></p>
+</blockquote>
+
+<hr>
+
+<h5><font face="Times New Roman"><a name="VOL"></a>Vol Tag</font></h5>
+
+<p><font face="Times New Roman"><b>Description</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">Sets the baseline speaking volume of the speech output.</font></p>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Syntax</b> </font></p>
+
+<blockquote>
+  <b><p><font face="Times New Roman">\Vol=</b><i>number</i><b>\</b></font></p>
+</blockquote>
+
+<blockquote>
+  <table WIDTH="87%" BORDER="1" CELLPADDING="5" CELLSPACING="0">
+    <tr VALIGN="TOP" BGCOLOR="#DDDDDD">
+      <td><font face="Times New Roman"><b>Part</b></font></td>
+      <td><font face="Times New Roman"><b>Description</b></font></td>
+    </tr>
+    <tr VALIGN="TOP">
+      <td><font face="Times New Roman"><i>number</i></font></td>
+      <td><font face="Times New Roman">Baseline speaking volume: 0 is silence and 65535 is
+      maximum volume. </font></td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><font face="Times New Roman"><b>Remarks</b> </font></p>
+
+<blockquote>
+  <p><font face="Times New Roman">The volume setting affects both left and right channels.
+  You cannot set the volume of each channel separately. This tag is supported only for
+  TTS-generated output.</font><font FACE="VERDANA,ARIAL,HELVETICA" SIZE="2"></p>
+</blockquote>
+</font>
+</body>
+</html>

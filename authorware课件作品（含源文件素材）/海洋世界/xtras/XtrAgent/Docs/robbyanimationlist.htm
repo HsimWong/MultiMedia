@@ -1,0 +1,594 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>Animations for Robby Character</title>
+</head>
+
+<body>
+
+<p><font face="Comic Sans MS" size="7"><strong>Animations for Robby Character</strong></font></p>
+
+<p><img src="images/ROBBYGREET.GIF" alt="Robby" width="128" height="128"></p>
+
+<p><font face="Times New Roman" size="3">Robby supports the animations listed in the table
+below. Refer to the <a href="xa_doc.htm#Play">XtrAgent documentation</a> for information
+on how to call the character's animations. </font></p>
+
+<p>If an animation's <b>Return</b> animation is defined using Exit branches, you do not
+need to call it explicitly; Agent automatically plays the <b>Return</b> animation before
+the next animation. However, if a <b>Return</b> animation is listed, you must call the
+animation using the <b>Play</b> sprite method before another animation to provide a smooth
+transition. If no <b>Return</b> animation is listed, the animation typically ends without
+needing a transitional animation.</p>
+
+<p>The character file includes sound effects for some animations as noted in the following
+table. </p>
+
+<table border="0" cellPadding="5" cellSpacing="2" class="clsRef" width="95%">
+<TBODY>
+  <tr align="left" bgColor="#a6caf0" vAlign="center">
+    <td><b>Animation</b> </td>
+    <td><b>Return Animation</b> </td>
+    <td><b>Supports Speaking</b> </td>
+    <td><b>Sound Effects</b> </td>
+    <td><b>Assigned to State</b> </td>
+    <td><b>Description</b> </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Acknowledge</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Nods head </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Alert</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>Listening</b> </td>
+    <td align="left" bgColor="#eeeeee">Straightens </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Announce</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Prints out paper and reports </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Blink</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>IdlingLevel1 <br>
+    IdlingLevel2</b> </td>
+    <td align="left" bgColor="#eeeeee">Blinks eyes </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Confused</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Scratches head </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Congratulate</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Raises hands then clasps hands </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Decline</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Raises hand and shakes head </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>DoMagic1</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Removes device </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>DoMagic2</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Presses button and beam appears </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>DontRecognize</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Holds hand to ear </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Explain</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Gestures with arms </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>GestureDown</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>GesturingDown</b> </td>
+    <td align="left" bgColor="#eeeeee">Gestures down </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>GestureLeft</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>GesturingLeft</b> </td>
+    <td align="left" bgColor="#eeeeee">Gestures left </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>GestureRight</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>GesturingRight</b> </td>
+    <td align="left" bgColor="#eeeeee">Gestures right </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>GestureUp</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>GesturingUp</b> </td>
+    <td align="left" bgColor="#eeeeee">Gestures up </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>GetAttention</b> </td>
+    <td align="left" bgColor="#eeeeee"><b>GetAttentionReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Waves arms </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>GetAttentionContinued</b> </td>
+    <td align="left" bgColor="#eeeeee"><b>GetAttentionReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Waves arms again </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>GetAttentionReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Returns to neutral position </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Greet</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Holds up hand </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Hearing_1</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>Hearing</b> </td>
+    <td align="left" bgColor="#eeeeee">Tilts head right (*looping animation) </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Hearing_2</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>Hearing</b> </td>
+    <td align="left" bgColor="#eeeeee">Tilts head left (*looping animation) </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Hearing_3</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>Hearing</b> </td>
+    <td align="left" bgColor="#eeeeee">Cocks head left (*looping animation) </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Hearing_4</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>Hearing</b> </td>
+    <td align="left" bgColor="#eeeeee">Tilts head down (*looping animation) </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Hide</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee"><b>Hiding</b> </td>
+    <td align="left" bgColor="#eeeeee">Disappears through door </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Idle1_1</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>IdlingLevel1 <br>
+    IdlingLevel2</b> </td>
+    <td align="left" bgColor="#eeeeee">Glances right </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Idle1_2</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>IdlingLevel1 <br>
+    IdlingLevel2</b> </td>
+    <td align="left" bgColor="#eeeeee">Glances up and blinks </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Idle1_3</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>IdlingLevel1 <br>
+    IdlingLevel2</b> </td>
+    <td align="left" bgColor="#eeeeee">Glances down and blinks </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Idle1_4</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>IdlingLevel1 <br>
+    IdlingLevel2</b> </td>
+    <td align="left" bgColor="#eeeeee">Glances left and blinks </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Idle2_1</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>IdlingLevel2</b> </td>
+    <td align="left" bgColor="#eeeeee">Folds arms </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Idle2_2</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee"><b>IdlingLevel2</b> </td>
+    <td align="left" bgColor="#eeeeee">Removes head and makes adjustment </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Idle3_1</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>IdlingLevel3</b> </td>
+    <td align="left" bgColor="#eeeeee">Yawns </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Idle3_2</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee"><b>IdlingLevel3</b> </td>
+    <td align="left" bgColor="#eeeeee">Shuts down </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>LookDown</b> </td>
+    <td align="left" bgColor="#eeeeee"><b>LookDownReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Looks down </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>LookDownReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Returns to neutral position </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>LookLeft</b> </td>
+    <td align="left" bgColor="#eeeeee"><b>LookLeftReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Looks left </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>LookLeftReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Returns to neutral position </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>LookRight</b> </td>
+    <td align="left" bgColor="#eeeeee"><b>LookRightReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Looks right </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>LookRightReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Returns to neutral position </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>LookUp</b> </td>
+    <td align="left" bgColor="#eeeeee"><b>LookUpReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Looks up </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>LookUpReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Returns to neutral position </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>MoveDown</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee"><b>MovingDown</b> </td>
+    <td align="left" bgColor="#eeeeee">Flies down </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>MoveLeft</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee"><b>MovingLeft</b> </td>
+    <td align="left" bgColor="#eeeeee">Flies left </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>MoveRight</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee"><b>MovingRight</b> </td>
+    <td align="left" bgColor="#eeeeee">Flies right </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>MoveUp</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee"><b>MovingUp</b> </td>
+    <td align="left" bgColor="#eeeeee">Flies up </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Pleased</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Smiles and straightens up </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Process</b> </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Presses buttons, prints, reads, then tosses printout </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Processing</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Presses buttons, prints, reads, then tosses printout </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Read</b> </td>
+    <td align="left" bgColor="#eeeeee">ReadReturn </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Prints, reads, and looks up </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>ReadContinued</b> </td>
+    <td align="left" bgColor="#eeeeee">ReadReturn </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Reads and looks up </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>ReadReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Returns to neutral position </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Reading</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Prints, reads, and looks up (*looping animation) </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>RestPose</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee"><b>Speaking</b> </td>
+    <td align="left" bgColor="#eeeeee">Neutral position </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Sad</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Sad expression </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Search</b> </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Reveals toolbox and removes tool </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Searching</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Reveals toolbox and removes tools (*looping animation) </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Show</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee"><b>Showing</b> </td>
+    <td align="left" bgColor="#eeeeee">Appears through doorway </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>StartListening</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Puts hand to ear </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>StopListening</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Puts hands over ears </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Suggest</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Displays lightbulb </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Surprised</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Looks surprised </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Think</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Scratches head </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Thinking</b> </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Scratches head (*looping animation) </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Uncertain</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Shrugs </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Wave</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Waves </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Write</b> </td>
+    <td align="left" bgColor="#eeeeee"><b>WriteReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Reveals pencil and clipboard, writes and looks up </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>WriteContinued</b> </td>
+    <td align="left" bgColor="#eeeeee"><b>WriteReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Writes and looks up </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>WriteReturn</b> </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Returns to neutral position </td>
+  </tr>
+  <tr align="left" vAlign="top">
+    <td align="left" bgColor="#eeeeee"><b>Writing</b> </td>
+    <td align="left" bgColor="#eeeeee">Yes, using Exit branches </td>
+    <td align="left" bgColor="#eeeeee">No </td>
+    <td align="left" bgColor="#eeeeee">Yes </td>
+    <td align="left" bgColor="#eeeeee">None </td>
+    <td align="left" bgColor="#eeeeee">Reveals pencil and clipboard, writes (*looping
+    animation) </td>
+  </tr>
+</TBODY>
+</table>
+
+<p>* If you play a looping animation, you must use <b>Stop</b> sprite method to clear it
+before other animations in the character's queue will play. </p>
+</body>
+</html>

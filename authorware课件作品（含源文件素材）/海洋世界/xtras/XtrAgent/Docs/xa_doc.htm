@@ -1,0 +1,1309 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<style>
+<!--
+-->
+</style>
+<title>XtrAgent Documentation</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+
+<table border="0" width="480" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="479"><p align="center"><img src="images/DX.gif" width="390" height="80"
+    alt="DX.gif (13839 bytes)"><img src="images/xtrapower.gif" width="470" height="21"
+    alt="xtrapower.gif (2772 bytes)"></p>
+    <p align="center"><font face="Comic Sans MS" size="6"><strong>XtrAgent</strong></font><b><font
+    face="Comic Sans MS" size="5">&#153;</font><font size="5"> </font></b><strong><font
+    face="Comic Sans MS" size="1">version 2.0 </font><font face="Comic Sans MS" size="6">Documentation</font></strong></td>
+  </tr>
+  <tr>
+    <td width="479"><b>&nbsp;<p></b><font face="Comic Sans MS">Developed by Tomer Berda, Copyright
+    (C) DirectXtras Inc. 1998-99. </font></p>
+    <p><font face="Comic Sans MS">Last updated: 5.2.99</font></p>
+    <p><br>
+    <font face="Times New Roman" size="3">XtrAgent is an Asset Xtra which enables the use of <a
+    target="_blank" href="http://msdn.microsoft.com/msagent/default.asp">Microsoft's
+    revolutionary &quot;Agent&quot; technology</a> in Director, Authorware and Shockwave
+    applications, that provides a foundation for more natural ways for people to communicate
+    with their computers. </font></p>
+    <p><font face="Times New Roman" size="3">XtrAgent adds a new type of member to your cast -
+    Agent.<br>
+    Agent is an interactive animated character that can be drawn on top <br>
+    of all other sprites and windows and even outside of the stage area. <br>
+    It can speak, via a text-to-speech engine or recorded audio, and accept spoken voice
+    commands.<br>
+    Agents can be used as guides, coaches, entertainers, or other types of assistants or
+    specialists. </font></p>
+    <p><font face="Times New Roman" size="3">Using XtrAgent, developers can utilize
+    Text-To-Speech &amp; Speech Recognition engines and freely distribute them with their
+    applications!</font></p>
+    <p><font face="Times New Roman" size="3">In addition, XtrAgent provides powerful animation
+    capability and interactivity, with support for high-quality lip-synching at an incredible
+    ease of development. It comes with ready-to-use characters and also support custom
+    characters that developers can create using the Microsoft Agent character editor.</font></p>
+    <p><font face="Times New Roman" size="3">XtrAgent is available for Windows 9X &amp; NT. It
+    is possible to use it along with the MacOS version of Xpress Xtra to have a cross-platform
+    Text-To-Speech solution.</font></p>
+    <p><br>
+    </p>
+    <p><font face="Comic Sans MS" size="6"><strong>XtrAgent Installation</strong></font></p>
+    <p><font face="Times New Roman" size="3">Locate your Director\Xtras and/or
+    Authorware\Xtras folder.<br>
+    In this folder, if not exists already, create a new folder named &quot;DirectXtras&quot;.</font></p>
+    <p><font face="Times New Roman" size="3">Copy the authoring or trial version of XtrAgent
+    to the &quot;DirectXtras&quot; folder you've just created.</font></p>
+    <p><font face="Times New Roman" size="3">If you didn't already, follow the instructions
+    located at the XtrAgent home page to download and install the Microsoft Agent core
+    components, text-to-speech engine, speech recognition engine and character files.</font></p>
+    <h1><font face="Comic Sans MS" size="6"><strong>Getting Started</strong></font></h1>
+    <p><font face="Times New Roman" size="3">Before starting, if you're using Director 5 or 6,
+    you should configure Director's authoring environment to properly display external
+    palettes in 256 color mode. This can be done by editing the DIRECTOR.INI file, which is
+    located in the same directory of your Director application. You need to edit the palette
+    section to look like:</font></p>
+    <p><font face="Times New Roman" size="3">[Palette]</font></p>
+    <p><font face="Times New Roman" size="3">Animation=0</font></p>
+    <p><font face="Times New Roman" size="3">; 1: allows director to take control of the
+    palette for fast palette effects and transitions.</font></p>
+    <p><font face="Times New Roman" size="3">; 0: prevents director from taking control of the
+    palette so other apps, wallpaper etc. look better but palette effects and transitions will
+    be slower.</font></p>
+    <p><font face="Times New Roman" size="3">You will need to include a copy of this modified
+    DIRECTOR.INI file with your Projectors. </font></p>
+    <p><font face="Times New Roman" size="3">It is also recommended to enable the
+    &quot;Animate in Background&quot; option. This can be done by selecting the
+    FILE-&gt;PREFERENCES-&gt;GENERAL menu in Director and checking the &quot;Animate in
+    Background&quot; option.</font></p>
+    <p><font face="Comic Sans MS" size="6"><strong>Animation Services</strong></font></p>
+    <p>XtrAgent's animation services manage the animation and movement of a character's image
+    in its own window on the screen. An animation is defined as a sequence of timed and
+    optionally branched frames, composed of one or more images.</p>
+    <h3><strong>Loading a Character </strong></h3>
+    <p>To animate a character, you must first load the character file into a cast member/icon.
+    <font face="Times New Roman" size="3">From the <em>Insert</em> menu, select <em>DirectXtras-&gt;XtrAgent</em>.
+    A Dialog Box will appear, prompting you to choose an Agent character file to associate
+    with this cast member</font>/icon<font face="Times New Roman" size="3">. </font>XtraAgent
+    supports single structured character files (.ACS). </p>
+    <p><font face="Times New Roman" size="3">After choosing an Agent character file, a new
+    cast member</font>/icon<font face="Times New Roman" size="3"> will appear. It has the
+    XtrAgent icon, and the name of the character you've just insert. In Director, you can
+    click on it and drag it to the score. A new sprite will be created on your score window,
+    presenting the Agent character, and you can adjust the position and the size of the
+    character directly in the score. </font></p>
+    <p>Applications can load only a single instance of the same character. Therefore, any
+    attempt to load the same character into more than one sprite will fail. </p>
+    <p>Microsoft Agent provides a set of characters you can download and use, subject to the
+    provisions of the license agreement. The Microsoft Agent Characters can be downloaded from
+    the Microsoft Agent Web site at <a
+    href="http://msdn.microsoft.com/msagent/characterdata.asp" target="_blank">http://msdn.microsoft.com/msagent/characterdata.asp.</a></p>
+    <p>You can also define your own characters for use with Microsoft Agent. You may use any
+    rendering tool you prefer to create the images, provided that you end up with Windows
+    bitmap format files. To assemble and compile a character's images into animations for use
+    with Microsoft Agent, use the Microsoft Agent Character Editor. This tool enables you to
+    define a character's default properties as well as define animations for the character.
+    You can download the Microsoft Agent Character Editor from the Microsoft Agent Web site at
+    <a href="http://msdn.microsoft.com/msagent/agentdevdl.asp" target="_blank">http://msdn.microsoft.com/msagent/agentdevdl.asp.
+    </a></p>
+    <h3><strong>Loading the Default Character </strong></h3>
+    <p>Instead of loading only a specific character directly by specifying its filename, you
+    can load the <i>default character</i>. The default character is a service intended to
+    provide a shared, central Windows assistant that the user chooses. Microsoft Agent
+    includes a property sheet as part of the default character service, known as the Character
+    Properties window, which enables the user to change their selection of the default
+    character. </p>
+    <p>Selection of the default character is limited to a character that supports the standard
+    animation set, ensuring a basic level of consistency across characters. This does not
+    exclude a character from having additional animations. </p>
+    <p>However, because the default character is intended for general-purpose use and may be
+    shared by other applications at the same time, avoid loading the default character when
+    you want a character exclusively for your application.</p>
+    <p>To load the default character, create a new member/icon from your scripts without
+    specifying a filename, or set the <strong>File</strong> member/icon property to an empty
+    string. XtrAgent automatically loads the current character set as the default character.
+    If the user has not yet selected a default character, XtrAgent will select the first
+    character that supports the standard animation set. If none is available, the method will
+    fail and the <strong>File</strong> member/icon property will be set to comma
+    (&quot;,&quot;), indicating that no character file was loaded.</p>
+    <p>Although a client application can inquire as to the identity of the character, only a
+    user can change its settings. You can use the <b>ShowDefaultCharacterProperties</b>
+    member/icon method to display the Character Properties window.</p>
+    <p>XtrAgent will notify applications that have loaded the default character when a user
+    changes a character selection, and pass the GUID of the new character. Agent automatically
+    unloads the former character and reloads the new character. The queues of any clients that
+    have loaded the default character are halted and flushed. However, the queues of clients
+    that have loaded the character explicitly using the character's filename are not affected.
+    If necessary, Agent also handles automatically resetting the text-to-speech (TTS) engine
+    for the new character.</p>
+    <h3><strong>Animating a Character </strong></h3>
+    <p>Once a character is loaded and placed on the screen, you can use several of XtrAgent's
+    sprite functions for animating the character.</p>
+    <p>You can use the <b>Play</b> sprite method, specifying the name of an animation, to play
+    that animation. Animation names are specific to a character definition. As an animation
+    plays, the shape of its window changes to match the image in the frame. This results in a
+    movable graphic image, or <i>sprite</i>, displayed on top of the desktop and all windows,
+    or <i>z-order</i>.</p>
+    <p>The <b>Say</b> sprite method enables you to program the character to speak,
+    automatically lip-syncing the output. Further details are covered in the Output section of
+    this document.</p>
+    <p>You can use the <b>MoveTo</b> sprite method to position the character at a new
+    location. When you call the <b>MoveTo</b> sprite method, XtrAgent automatically plays the
+    appropriate animation based on the character's current location, then moves the
+    character's frame. Similarly, when you call <b>GestureAt</b>, XtrAgent plays the
+    appropriate gesturing animation based on the character's location and the location
+    specified in the call.</p>
+    <p>To hide or show the character, call the <b>Show</b> sprite method. This automatically
+    plays the animation associated with the character's <b>Hiding</b>/<b>Showing</b> state,
+    then hides/shows the character's frame. </p>
+    <p>XtrAgent processes all animation calls, or <i>requests</i>, asynchronously. This
+    enables your application's code to continue handling other events while the request is
+    being processed. For example, calls to the <b>Play</b> sprite method place the animation
+    in a queue for the character so that the animations can be played sequentially. However,
+    this means you cannot assume that a call to other functions will necessarily execute after
+    an animation it follows in your code. For example, typically, a statement following a call
+    to <b>Play</b> or <b>MoveTo</b> will execute before the animation finishes. </p>
+    <p>You can synchronize your code with animations in a character's queue by storing a
+    reference to the animation request, and, when the animation starts or completes,
+    monitoring the <b>Request</b> events that XtrAgent uses to notify your application. For
+    example, if you want a message box to appear when the character finishes an animation, you
+    can put the message box call in your <b>RequestComplete</b> event handling subroutine,
+    checking for the particular request ID.</p>
+    <p>When a character is hidden, XtrAgent does not play animations; however, it still queues
+    and processes the animation request (plays the animation) and passes a request status back
+    to the client. In the hidden state, the character cannot become input-active. However, if
+    the user speaks the name of the character (when speech input is enabled), Agent
+    automatically shows the character.</p>
+    <p>When your application loads multiple characters at the same time, XtrAgent's animation
+    services enable you to animate characters independently or use the <b>Wait</b>, <b>Interrupt</b>
+    or <b>Stop</b> sprite methods to synchronize their animation with each other. </p>
+    <p>Agent can also plays other animations automatically for you. For example, if the
+    character's state has not changed for several seconds, Agent begins playing animations
+    assigned to the character's <b>Idling</b> animations. Similarly, when speech input is
+    enabled, Agent plays the character's <b>Listening</b> animations and then <b>Hearing</b>
+    animations when an utterance is detected. These server-managed animations are called <i>states</i>,
+    and are defined when a character is created.</p>
+    <p>&nbsp;</p>
+    <p><font face="Comic Sans MS" size="6"><strong>Input Services</strong></font></p>
+    <p>A client application provides the primary user interface for interaction with a
+    character. You can program a character to respond to any form of input, from button-clicks
+    to typed-in text. In addition, XtrAgent provides events so you can program what happens
+    when the user clicks, double-clicks, or drags the character. The Xtra passes the
+    coordinates of the pointer for these events. </p>
+    <h3>Input-Active Client </h3>
+    <p>Because multiple client applications can share the same character and because multiple
+    clients can use different characters at the same time, Agent designates one client as the <i>input-active</i>
+    client and sends mouse and voice input only to that client application. This maintains the
+    orderly management of user input, so that an appropriate client responds to the input. </p>
+    <p>Typically, user interaction determines which client application becomes input-active.
+    For example, if the user clicks a character, that character's client application becomes
+    input-active. Similarly, if a user speaks the name of a character, it becomes
+    input-active. Also, when Agent processes a character's <b>Show</b> sprite method to show
+    the character, the client of that character becomes input-active. </p>
+    <p>When a character is hidden, the client of that character will no longer be input-active
+    for that character. Agent automatically makes the active client of any remaining
+    character(s) input-active. When all characters are hidden, no client is input-active.
+    However, in this situation, if the user presses the Listening hotkey, Agent will continue
+    to listen for its commands (using the speech recognition engine matching the topmost
+    character of the last input-active client).</p>
+    <p>If multiple clients are sharing the same character, Agent will designate its <i>active</i>
+    <i>client</i> as input-active client. The active character is the topmost in the client
+    order. You can set your client to be the active or not-active client using the <b>Activate</b>
+    sprite method. You can also use the <b>Activate</b> sprite method to explicitly make your
+    client input-active; but to avoid disrupting other clients of the character, you should do
+    so only when your client application is active. For example, if the user clicks your
+    application's window, activating your application, you can call the <b>Activate</b> sprite
+    method to receive and process mouse and speech input directed to the character. </p>
+    <h3>Pop-up Menu Support </h3>
+    <p>XtrAgent includes a pop-up menu (also known as a contextual menu) for each character.
+    XtrAgent displays this pop-up menu automatically when a user right-clicks the character.
+    You can add commands for your client application to the menu by defining a <b>Commands</b>
+    collection. For each command in the collection that you define, you can specify <b>CommandsCaption</b>
+    and <b>CommandsVisible</b> properties. The <b>CommandsCaption</b> is the text that appears
+    in the menu when the <b>CommandsVisible</b> property is set to <b>True</b>. Define the
+    access key for the menu text by including an ampersand (&amp;) before the text character
+    of the <b>CommandsCaption</b> text setting.</p>
+    <p>Agent automatically adds to the menu commands for opening the Voice Commands Window and
+    hiding the character as well as the <b>Commands</b> captions of other clients of the
+    character to enable users to switch between clients. It also automatically adds a
+    separator to the menu between its menu entries and those defined by the client. Separators
+    appear only when there are items in the menu to separate. </p>
+    <p>To remove commands from a menu, use the <b>RemoveCommand</b> member/icon method. Note
+    that menu entries do not change while the menu displays. If you add or remove commands or
+    change their properties, the menu displays the changes when the user redisplays the menu. </p>
+    <p>If you prefer to provide your own pop-up menu services for a character, you can use the
+    <b>AutoPopupMenu</b> member/icon property to turn off Agent handling of the right-click
+    action. You can then use the <b>Click</b> event notification to create your own menu
+    handling behavior.</p>
+    <p>When the user selects a command from a character's pop-up menu or the Voice Commands
+    Window, XtrAgent triggers the <b>Command</b> event of the associated client and passes
+    back the parameters of the input.</p>
+    <p>Agent also provides a pop-up menu for the character's taskbar icon. When the character
+    is visible, right-clicking this menu displays the same commands as those displayed by
+    right-clicking the character. However, when the character is hidden, only the
+    Agent-supplied commands are included. </p>
+    <h3>Speech Input Support </h3>
+    <p>In addition to supporting mouse and keyboard interaction, Microsoft Agent includes
+    direct support for speech input. Because Microsoft Agent's support for speech input is
+    based on Microsoft SAPI (Speech Application Programming Interface), you can use Microsoft
+    Agent with speech recognition command and control engines that include the SAPI-required
+    support. For more information on speech engine requirements, see <a
+    href="http://msdn.microsoft.com/workshop/imedia/agent/speechsupreq.asp" target="_blank">Speech
+    Engine Support Requirements. </a></p>
+    <p>Microsoft provides a command-and-control speech recognition engine you can use with
+    Microsoft Agent.</p>
+    <p>The user can initiate speech input by pressing and holding the push-to-talk Listening
+    hotkey. In this Listening mode, if the speech engine receives the beginning of spoken
+    input, it holds the audio channel open until it detects the end of the utterance. However,
+    when not receiving input, it does not block audio output. This enables the user to issue
+    multiple voice commands while holding down the key, and the character can respond when the
+    user isn't speaking. </p>
+    <p>The Listening mode times out once the user releases the Listening key. The user can
+    adjust the time-out for this mode using the Advanced Character Options. You cannot set
+    this time-out from your client application code.</p>
+    <p>If a character attempts to speak while the user is speaking, the character's audible
+    output fails though text may still be displayed in its word balloon. If the character has
+    the audio channel while the Listening key is pressed, Agent automatically transfers
+    control back to the user after processing the text in the <b>Say</b> sprite method. An
+    optional MIDI tone is played to cue the user to begin speaking. This enables the user to
+    provide input even if the application driving the character failed to provide logical
+    pauses in its output.</p>
+    <p>You can also use the <b>Listen</b> sprite method to initiate speech input. Calling this
+    method turns on the speech recognition for a predefined period of time. If there is no
+    input during this interval, Microsoft Agent automatically turns off the speech recognition
+    engine and frees up the audio channel. This avoids blocking input to or output from the
+    audio device and minimizes the processor overhead the speech recognition uses when it is
+    on. You can also use the <b>Listen</b> sprite method to turn off speech input. However, be
+    aware that because the speech recognition engine operates asynchronously, the effect may
+    not be immediate. As a result, it is possible to receive a <b>Command</b> event even after
+    your code called <b>Listen</b> to turn off speech input.</p>
+    <p>To support speech input, you define a <i>grammar</i>, a set of words you want the
+    speech recognition engine to listen and match for as the <b>Voice</b> setting for a <b>Command</b>
+    in your <b>Commands</b> collection. You can include optional and alternative words and
+    repeated sequences in your grammar. Note that Agent does not enable the Listening hotkey
+    until one of its clients has successfully loaded a speech engine or has authored a <b>Voice</b>
+    for one of its <b>Command</b> objects.</p>
+    <p>Whether the user presses the Listening hotkey or your client application calls the <b>Listen</b>
+    sprite method to initiate speech input, the speech recognition engine attempts to match an
+    utterance's input to the grammar for the commands that have been defined, and passes the
+    information back to XtrAgent. The Xtra then notifies your application using the <b>Command</b>
+    event. </p>
+    <p>XtrAgent also notifies your client application when it matches the speech input to one
+    of its supplied commands. When in Listening mode, the Xtra automatically plays the
+    animation assigned to the character's <b>Listening</b> state. Then, when an utterance is
+    actually detected, Agent plays the character's <b>Hearing</b> state animation. Agent will
+    keep the character in an attentive state until the utterance has ended. This provides the
+    appropriate social feedback to cue the user for input. </p>
+    <p>If the user disables speech input in Advanced Character Options, the Listening hotkey
+    will also be disabled. Similarly, attempting to call the <b>Listen</b> sprite method when
+    speech input is disabled will cause the method to fail. </p>
+    <h3>Speech Engine Selection </h3>
+    <p>A character's language ID setting determines its default speech input language;
+    Microsoft Agent requests SAPI for an installed engine that matches that language. If a
+    client application does not specify a language preference, Microsoft Agent will attempt to
+    find a speech recognition engine that matches the user default language ID (using the
+    major language ID, then the minor language ID). If no engine is available matching this
+    language, speech is disabled for that character.</p>
+    <p>You can also request a specific speech recognition engine by specifying its mode ID
+    (using the <b>SRModeID</b> member/icon property). However, if the language ID for that
+    mode ID does not match the client's language setting, the call will fail. The speech
+    recognition engine will then remain the last successfully set engine by the client, or if
+    none, the engine that matches the current system language ID. If there is still no match,
+    speech input is not available for that client.</p>
+    <p>Microsoft Agent automatically loads a speech recognition engine when speech input is
+    initiated by a user pressing the Listening hotkey or the input-active client calls the <b>Listen</b>
+    sprite method. However, an engine may also be loaded when setting or querying its mode ID,
+    setting or querying the properties of the Voice Commands Window, querying <b>SRStatus</b>
+    member/icon property, or when speech is enabled and the user displays the Speech Input
+    page of the Advanced Character Options. However, Microsoft Agent only keeps loaded the
+    speech engines that clients are using. </p>
+    <h3>Speech Input Events </h3>
+    <p>In addition to the <b>Command</b> event notification, XtrAgent also notifies the
+    input-active client when Agent turns the Listening mode on or off, using the <b>ListeningState</b>
+    event. However, if the user presses the Listening mode key and there is no matching speech
+    recognition engine available for the topmost character of the input-active client, Agent
+    starts the Listening hotkey mode time-out, but does not generate a <b>ListeningState</b>
+    event for the active client of the character. If, before the time-out completes, the user
+    activates another character with speech recognition engine support, Agent attempts to
+    activate speech input and generates the <b>ListeningState</b> event. </p>
+    <p>Similarly, if a client attempts to turn on the Listening mode using the <b>Listen</b>
+    sprite method and there is no matching speech recognition engine available, the call fails
+    and XtrAgent does not generate a <b>ListeningState </b>event. </p>
+    <p>When the Listening key mode is on and the user switches to a character that uses a
+    different speech recognition engine, Agent switches to and activates that engine and
+    triggers a <b>ListeningState</b> event. If the activated character does not have an
+    available speech recognition engine (because one is not installed or none match the
+    activated character's language ID setting), XtrAgent will trigger the <b>ListeningState</b>
+    event for the previously activated character and passes back a value in the <b>Cause</b>
+    parameter. However, the Xtra does not generate <b>ListeningState</b> events for the
+    clients that do not have speech recognition support.</p>
+    <p>If a client successfully calls the <b>Listen</b> sprite method and a character without
+    speech recognition engine support becomes input-active before the Listening mode time-out
+    completes, and then the user switches back to the character of the original client, Agent
+    will generate a <b>ListeningState</b> event for that client.</p>
+    <p>If the input-active client switches speech recognition engines by changing <b>SRModeID</b>
+    member/icon property while in Listening mode, XtrAgent switches to and activates that
+    engine without re-triggering the <b>ListeningState</b> event. However, if the specified
+    engine is not available, the call fails and the Xtra also calls the <b>ListeningState</b>
+    event, indicating that Listening mode has ended. </p>
+    <h3>The Listening Tip </h3>
+    <p>The Listening Tip is another speech input service provided by Microsoft Agent. When
+    speech input is installed, Agent includes a special tooltip window that appears when the
+    user presses the Listening hotkey or calls the <strong>Listen</strong> sprite method. The
+    Listening Tip appears only when the speech services are available. If no client has
+    authored a voice command or successfully loads a speech engine, the Listening Tip does not
+    appear. Further, both speech input and the Display Listening Tips option in the Advanced
+    Character Options must be enabled for the tip to appear.</p>
+    <p>The Listening Tip automatically times out after being presented. If the
+    &quot;Heard&quot; text time-out completes while the user is still holding down the hotkey,
+    the tip reverts to the &quot;listening&quot; text unless the Agent receives another
+    matching utterance. In this case, the tip displays the new &quot;Heard&quot; text and
+    begins the time-out for that tip text. If the user releases the hotkey and the Agent is
+    displaying the &quot;Heard&quot; text, the time-out continues and the Listening Tip window
+    is hidden when the time-out interval elapses. </p>
+    <p>If the Agent has not yet attempted to load a speech recognition engine, the Listening
+    Tip will not display. Similarly, if the user has disabled the display of the Listening Tip
+    or disabled speech input in Advanced Character Options, the Listening Tip will not be
+    displayed. </p>
+    <p>The Listening Tip does not appear when the pointer is over the character's taskbar
+    icon. Instead, the standard notification tip window appears and displays the character's
+    name.</p>
+    <p>Client applications cannot write directly to the Listening Tip.</p>
+    <p>The Listening Tip text appears in the language based on the input-active client's
+    character language ID setting, regardless of whether there is a language-compatible speech
+    recognition engine available.</p>
+    <p><font face="Comic Sans MS" size="6"><strong>Output Services</strong></font></p>
+    <p>In addition to supporting the animation of a character, Microsoft Agent supports audio
+    output for the character. This includes spoken output and sound effects. For spoken
+    output, XtrAgent automatically lip-syncs the character's defined mouth images to the
+    output. You can choose text-to-speech (TTS) synthesis, recorded audio, or only word
+    balloon text output. </p>
+    <h3>Synthesized Speech Support </h3>
+    <p>If you use synthesized speech, your character has the ability to say almost anything,
+    which provides the greatest flexibility. With recorded audio, you can give the character a
+    specific or unique voice. To specify output, provide the spoken text as a parameter of the
+    <b>Say</b> method. </p>
+    <p>Because Microsoft Agent's architecture uses Microsoft SAPI for synthesized speech
+    output, you can use any engine that conforms to this specification, and supports
+    International Phonetic Alphabet (IPA) output using the <b>Visual</b> method of the <b>ITTSNotifySinkW</b>
+    interface. For further information on the engine requires, see <a
+    href="http://msdn.microsoft.com/workshop/imedia/agent/speechsupreq.asp" target="_blank">Speech
+    Engine Requirements.</a></p>
+    <p>A character's language ID setting determines its TTS output. If a client does not
+    specify a language ID for the character, the character's language ID is set to the user
+    default language ID. If the character's definition includes a specific engine and that
+    engine can be loaded and it matches the character's language setting, that engine will be
+    used. Otherwise, Microsoft Agent enumerates the other available engines and requests a
+    SAPI best match based on language, gender, and age (in that order). If there is no
+    matching engine available, there is no TTS output for that client's use of the character.
+    Agent attempts to load the TTS engine on the first <b>Say</b> call or when you query or
+    successfully set its mode ID. </p>
+    <p>A client application can also specify a TTS engine for its character (using the <b>TTSModeID</b>
+    property). This overrides the Agent's attempt to automatically find a matching engine
+    based on the character's preferred TTS mode ID or the character's current language ID
+    setting. However, if that engine is not installed (or cannot otherwise be loaded), the
+    call will fail. XtrAgent then attempts to load another engine based on the language ID,
+    compiled character TTS setting, and available TTS engines. If there is still no match, TTS
+    is not available for that client, but the character can still speak into its word balloon.
+    </p>
+    <p>Only the TTS engines in use by any client remain loaded. For example, if a character
+    has a defined preference for a specific engine and that engine is available, but your
+    client application has specified a different engine (by setting a character's language ID
+    differently from the engine or specifying a different mode ID), only the engine specified
+    by your application remains loaded. The engine matching the character's defined preference
+    for a TTS setting is unloaded (unless another client is using the character's compiled
+    engine setting). </p>
+    <h3>Audio Output Support </h3>
+    <p>XtrAgent enables you to use audio files for a character's spoken output. You can record
+    audio files and use the <b>Say</b> sprite method to play that data. XtrAgent animation
+    services automatically support lip-syncing the character mouth by using the audio
+    characteristics of the audio file. XtrAgent also supports a special format for audio
+    files, which includes additional phoneme and word-break information for more enhanced
+    lip-sync support. You can generate this special format using the Microsoft Linguistic
+    Information Sound Editing Tool. </p>
+    <h3>Word Balloon Support </h3>
+    <p>Spoken output can also appear as textual output in the form of a cartoon word balloon.
+    This can be used to supplement the spoken output of a character or as an alternative to
+    audio output when you use the <b>Say</b> sprite method.</p>
+    <p>You can also use a word balloon to communicate what a character is &quot;thinking&quot;
+    using the <b>Think</b> sprite method. This displays the text you supply in a still
+    &quot;thought&quot; balloon. The <b>Think</b> method also differs from the <b>Say</b>
+    method in that it produces no audio output. </p>
+    <p>Word balloons support only captioned communication from the character, <i>not</i> user
+    input. Therefore, the word balloon does not support input controls. However, you can
+    easily provide user input for a character, using interfaces from your programming language
+    or the other input services provided by Microsoft Agent, such as the pop-up menu. </p>
+    <p>When you define a character, you can specify whether to include word balloon support.
+    If you use a character that includes word balloon support, you can temporarily disable the
+    word balloon using the 'Map' speech tag. This tag enables you to use different spoken text
+    than that displayed in the word balloon. If you pass an empty string for the text balloon,
+    the text balloon will not appear.</p>
+    <h3>Animation Sound Effects </h3>
+    <p>Microsoft Agent also enables you to include sound effects as a part of a character's
+    animation. Using the Microsoft Agent Character Editor, you can specify the filename of
+    standard Windows sound (.WAV) files to trigger on a given frame. Note that Microsoft Agent
+    does not mix sound effects and spoken output, so spoken output does not begin until a
+    sound effect completes. Therefore, avoid any long or looping sound effect as a part of a
+    character's animation. </p>
+    <h1><font face="Comic Sans MS">XtrAgent Sprite Methods</font></h1>
+    <p>&nbsp;</p>
+    <p><font face="Times New Roman" size="3"><strong>All methods return request ID if
+    succeeded, and void if not, except Listen(), Activate(), ShowPopupMenu(), Stop() and
+    StopAll() which return the number 1 if succeeded and void if not.</strong></font></p>
+    <h1><a name="Say"></a><font size="2" face="Comic Sans MS"><b>Say ( Sprite X, String Text,
+    String FileName )</b></font></h1>
+    <p><font face="Times New Roman" size="3">Converts a text string to speech using the
+    character's text-to-speech (TTS) engine.</font></p>
+    <i><b><p>Parameters:</p>
+    <p>Text: </b></i><font face="Times New Roman" size="3">The text the character is to speak.</font></p>
+    <p><i><b>FileName: </b></i><font face="Times New Roman" size="3">The path of a sound file
+    to use for spoken output. This parameter is optional and can be a standard sound file
+    (.WAV) or linguistically enhanced sound file (.LWV). </font></p>
+    <p><font face="times" size="3">You can include vertical bar characters (|) in the <i>Text</i>
+    parameter to designate alternative strings, so that each time the Xtra processes the
+    method, it randomly choose a different string. Support of TTS output is defined when the
+    character is compiled using the Microsoft Agent Character Editor. </font></p>
+    <p><font face="times" size="3">If you want to use sound file output for the character,
+    specify the location for the file in the <i>FileName</i> parameter. You can use the <i>Text</i>
+    parameter to specify the words that appear in the character&#146;s word balloon. If you
+    specify a linguistically enhanced sound file (.LWV) for the <i>FileName</i> parameter and
+    do not specify text, the <i>Text</i> parameter uses the text stored in the file. </font></p>
+    <p><font face="times" size="3">This method uses the last animation played to determine
+    which speaking animation to play. For example, if you precede the <b>Say</b> command with
+    a <b>Play</b> &quot;<b>GestureRight</b>&quot;, XtrAgent will play <b>GestureRight</b> and
+    then the <b>GestureRight</b> speaking animation. If the last animation played has no
+    speaking animation, then XtrAgent plays the animation assigned to the character&#146;s <b>Speaking</b>
+    state.</font></p>
+    <p><font face="times" size="3">If you call <b>Say</b> and the audio channel is busy, the
+    character&#146;s audio output will not be heard, but the text will display in the word
+    balloon. </font></p>
+    <p><font face="times" size="3"><b>Not</b><strong>e:</strong> Set the character&#146;s
+    language ID before using this method to ensure appropriate text display within the word
+    balloon. </font></p>
+    <p><b><font face="Times New Roman">See Also: </font></b><a href="speechoutputtags.htm"><strong><font
+    face="Times New Roman" size="3">Speech Output Tags</font></strong></a></p>
+    <p><a name="Play"></a><font size="2" face="Comic Sans MS"><b>Play ( Sprite X, String
+    Animation )</b></font></p>
+    <font face="Arial" size="2"><p></font><font face="Times New Roman" size="3">Plays a
+    specified character animation. </font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>Animation: </b></i><font face="Times New Roman" size="3">The name of the
+    animation to play.</font></p>
+    <p><font face="Times New Roman" size="3">An animation&#146;s name is defined when the
+    character is compiled with the Microsoft Agent Character Editor. Before playing the
+    specified animation, XtrAgent attempts to play the <b>Return</b> animation for the
+    previous animation (if one has been assigned).</font></p>
+    <p><b><font face="Times New Roman">See Also: </font></b><font face="Times New Roman"
+    size="3"><strong><a href="genieanimationlist.htm" target="main">Animations for Genie
+    Character</a>, <a href="robbyanimationlist.htm" target="main">Animations for Robby
+    Character</a>, <a href="merlinanimationlist.htm" target="main">Animations for Merlin
+    Character</a></strong></font></p>
+    <p><font size="2" face="Comic Sans MS"><b>Wait ( Sprite X, Integer RequestID )</b></font></p>
+    <p><font face="Times New Roman" size="3">Holds the character&#146;s animation queue at the
+    specified animation until another request for another character completes. </font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>RequestID: </b></i><font face="Times New Roman" size="3">The ID of the request to
+    wait for.</font></p>
+    <p><font face="Times New Roman" size="3">Use this method only when you support multiple
+    (simultaneous) characters and want to sequence their interaction. (For a single character,
+    each animation request is played sequentially--after the previous request completes.) If
+    you have two characters and want one character&#146;s animation request to wait until the
+    other character&#146;s animation completes, set the <b>Wait</b> method to the other
+    character&#146;s animation request ID.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>MoveTo ( Sprite X, Integer X, Integer Y, Integer
+    Speed )</b></font></p>
+    <p><font face="Times New Roman" size="3">Plays the associated <strong>Moving</strong>
+    state animation and moves the character frame to the specified location. </font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>X : </b></i><font face="Times New Roman" size="3">The x-coordinate of the new
+    position in pixels, relative to the stage origin (upper left). The location of a character
+    is based on the upper left corner of its sprite rect.</font></p>
+    <p><i><b>Y : </b></i><font face="Times New Roman" size="3">The y-coordinate of the new
+    position in pixels, relative to the stage origin (upper left). The location of a character
+    is based on the upper left corner of its sprite rect.</font></p>
+    <p><i><b>Speed : </b></i><font face="Times New Roman" size="3">A parameter specifying in
+    milliseconds how quickly the character&#146;s frame moves. The recommended value is 1000.
+    Specifying zero (0) moves the frame without playing an animation.</font></p>
+    <p><a name="Stop"></a><font size="2" face="Comic Sans MS"><b>Stop ( Sprite X, Integer
+    RequestID )</b></font></p>
+    <p><font face="Times New Roman" size="3">Stops the specified animation (request) and
+    removes it from the character&#146;s animation queue. </font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><b><i>RequestID:</i></b><font face="Times New Roman" size="3"> The ID of the request to
+    stop.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>StopAll ( Sprite X, Integer Type )</b></font></p>
+    <p><font face="Times New Roman" size="3">Stops all animations (requests) and removes them
+    from the character&#146;s animation queue. </font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>Type:<font face="Times New Roman" size="3"> </b></i>The type of requests to stop
+    (and remove from the character&#146;s queue). Can be one of the following integers:</font></p>
+    <p><font face="Times New Roman" size="3"><strong>1 </strong>- Stops all animation
+    requests.</font></p>
+    <p><font face="Times New Roman" size="3"><strong>2</strong> - Stops all <b>Play</b>
+    requests.</font></p>
+    <p><font face="Times New Roman" size="3"><strong>3</strong> - Stops all <b>Move</b>
+    requests.</font></p>
+    <p><font face="Times New Roman" size="3"><strong>4</strong> - Stops all <b>Say</b>
+    requests.</font></p>
+    <p><font face="Times New Roman" size="3"><strong>5</strong> - Stops all <b>Show</b>
+    requests.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>Show ( Sprite X, Integer Visibility )</b></font></p>
+    <p><font face="Times New Roman" size="3">Displays or hides the character.</font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>Visibility:<font face="Times New Roman" size="3"> </b></i>FALSE hides the
+    character and TRUE displays it.</font></p>
+    <p><font face="Times New Roman" size="3">XtrAgent queues the hide animation in the
+    character&#146;s queue. This allows you to use it to hide the character after a sequence
+    of other animations. You can play the action immediately by using the <strong>StopAll</strong>
+    method before calling the <b>Show</b> method. Hidden characters cannot access the audio
+    channel. </font></p>
+    <p><font size="2" face="Comic Sans MS"><b>Think ( Sprite X, String Text )</b></font></p>
+    <font face="Arial" size="2"><p></font><font face="Times New Roman" size="3">Displays the
+    character&#146;s thought word balloon with the specified text. </font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>Text:<font face="Times New Roman" size="3"> </b></i>The text to appear in the
+    character&#146;s thought balloon.</font></p>
+    <font face="Arial" size="2"><p></font><font face="Times New Roman" size="3">Like the <b>Say</b>
+    method, the <b>Think</b> method is a queued request that displays text in a word balloon,
+    except that thoughts display in a special thought balloon. The thought balloon supports
+    only the Bookmark speech control tag (<b>\Mrk</b>) and ignores any other speech control
+    tags. Unlike <b>Say</b>, the <b>Think</b> method does not change the character&#146;s
+    animation state.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>Listen ( Sprite X, Integer OnOff )</b></font></p>
+    <font face="Arial" size="2"><p></font><font face="Times New Roman">Turns Listening mode
+    (speech recognition input) on or off.</font><font face="Times New Roman" size="3"> </font></p>
+    <p><i><b>Parameter:</b></i></p>
+    <p><i><b>OnOff:<font face="Times New Roman" size="3"> </font></b></i>Listening mode flag.
+    If this parameter is <b>True</b>, the Listening mode is turned on; if <b>False</b>,
+    Listening mode is turned off.</p>
+    <p>Setting this method to <b>True</b> enables the Listening mode (turns on speech
+    recognition) for a fixed period of time. While you cannot set the value of the time-out,
+    you can turn off Listening mode before the time-out expires. In addition, if the Listening
+    mode is already on because you (or another client) successfully set the method to <b>True</b>
+    before the time-out expires, the method succeeds and resets the time-out. However, if
+    Listening mode is already on because the user is pressing the Listening key, the method
+    succeeds, but the time-out is ignored and the Listening mode ends based on the user's
+    interaction with the Listening key.</p>
+    <p>This method will succeed only when called by the input-active client. Therefore, the
+    method will fail if your client is not the active client of the topmost character. The
+    method will also fail if you attempt to set the method to <b>False</b> and the user is
+    pressing the Listening key. It can also fail if there is no compatible speech engine
+    available that matches the character's language ID setting or the user has disabled speech
+    input using the Microsoft Agent property sheet. However, the method will not fail if the
+    audio device is busy.</p>
+    <p>When you successfully set this method to <b>True</b>, XtrAgent triggers the <b>ListeningState</b>
+    event. It also sends<b> ListeningState</b> when the Listening mode time-out completes or
+    when you set <b>Listen</b> to <b>False</b>.</p>
+    <p>This method does not automatically call <b>StopAll</b> and play a Listening state
+    animation of the character as occurs when the user presses the Listening key. This enables
+    you to use the <b>ListeningState</b> event to determine whether you wish to stop the
+    current animation and play your own appropriate animation. However, once a user utterance
+    is detected, XtrAgent automatically calls <b>StopAll</b> and plays a Hearing state
+    animation.</p>
+    <p><font size="2" face="Comic Sans MS"><b>GestureAt ( Sprite X, Integer X, Integer Y )</b></font></p>
+    <font face="Arial" size="2"><p></font><font face="Times New Roman" size="3">Plays the
+    associated <b>Gesturing</b> state animation based on the specified location. </font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>X:<font face="Times New Roman" size="3"> </font></b></i>The x-coordinate of the
+    specified location in pixels, relative to the stage origin (upper left).</p>
+    <p><i><b>Y:<font face="Times New Roman" size="3"> </font></b></i>The y-coordinate of the
+    specified location in pixels, relative to the stage origin (upper left).</p>
+    <p>XtrAgent automatically determines and plays the appropriate gesturing animation based
+    on the character's current position and the specified location.</p>
+    <p><font size="2" face="Comic Sans MS"><b>Interrupt ( Sprite X, Integer RequestID )</b></font></p>
+    <font face="Arial" size="2"><p></font>Interrupts the specified animation (request) of
+    another character.</p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>RequestID:<font face="Times New Roman" size="3"> </font></b></i>An ID of the
+    request to interrupt.</p>
+    <p>If you load multiple characters, you can use this method to sync up animation between
+    characters. For example, if another character is in a looping animation, this method will
+    stop the looping animation and start the next animation in the character's queue. </p>
+    <p><b>Interrupt</b> halts the existing animation, but does not flush the character's
+    animation queue. It starts the next animation in the character's queue. To halt and flush
+    a character's queue, use the <b>Stop</b> method.</p>
+    <p>You cannot use this method to have a character interrupt itself because the Microsoft
+    Agent queues the <b>Interrupt</b> method in the character's animation queue. Therefore,
+    you can only use <b>Interrupt</b> to halt the animation of another character you have
+    loaded. </p>
+    <p><font size="2" face="Comic Sans MS"><b>Activate ( Sprite X, Integer State )</b></font></p>
+    <font face="Arial" size="2"><p></font>Sets whether your application is active or a
+    character is topmost.</p>
+    <p><i><b>Parameter:</b></i></p>
+    <p><i><b>State:<font face="Times New Roman" size="3"> </font></b></i>You can specify the
+    following values for this parameter: <br>
+    <strong>0 -</strong> Set as not the active client.<br>
+    <strong>1 -</strong> Set as the active client.<br>
+    <strong>2 -</strong> Make the topmost character.</p>
+    <p>When multiple characters are visible, only one of the characters receives speech input
+    at a time. Similarly, when multiple client applications share the same character, only one
+    of the clients receives mouse input at a time. The character set to receive mouse and
+    speech input is the topmost character and the client that receives input is the
+    character's active client. (The topmost character's window also appears at the top of the
+    character window's z-order.) Typically, the user determines which character is topmost by
+    explicitly selecting it. However, topmost activation also changes when a character is
+    shown or hidden (the character becomes or is no longer topmost, respectively.) </p>
+    <p>You can also use this method to explicitly manage when your client receives input
+    directed to the character, such as when your application itself becomes active. For
+    example, setting <b>State</b> to 2 makes the character topmost, and your client receives
+    all mouse and speech input events generated from user interaction with the character.
+    Therefore, it also makes your client the input-active client of the character. However,
+    you can also set the active client for a character without making the character topmost,
+    by setting <b>State</b> to 1. This enables your client to receive input directed to that
+    character when the character becomes topmost. Similarly, you can set your client to not be
+    the active client (to not receive input) when the character becomes topmost, by setting <b>State</b>
+    to 0. You can determine if a character has other current clients using <b>HasOtherClients</b>
+    member/icon property.</p>
+    <p>Avoid calling this method directly after a <b>Show</b> method. <b>Show</b>
+    automatically sets the input-active client. When the character is hidden, the <b>Activate</b>
+    call may fail, if it gets processed before the <b>Show</b> method completes.</p>
+    <p>Attempting to call this method with the <b>State</b> parameter set to 2 (when the
+    specified character is hidden) will fail. Similarly, if you set <b>State</b> to 0, and
+    your application is the only client, this call fails. A character must always have a
+    topmost client. </p>
+    <p><b>Note</b><strong>:</strong> Calling this method with <b>State</b> set to 1 does not
+    typically generate an <b>ActivateInputState</b> event unless there are no other characters
+    loaded or your application is already input-active. </p>
+    <p><font size="2" face="Comic Sans MS"><b>ShowPopupMenu ( Sprite X, Integer X, Integer Y )</b></font></p>
+    <font face="Arial" size="2"><p></font><font face="Times New Roman" size="3">Displays the
+    pop-up menu for the character.</font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><b><i>X:</i></b><font face="Times New Roman"><font size="4"> </font><font size="3">The
+    x-coordinate of the character&#146;s pop-up menu in pixels, relative to the stage origin
+    (upper left).<br>
+    </font></font><b><i>Y:</i></b><font face="Times New Roman"><font size="4"> </font><font
+    size="3">The y-coordinate of the character&#146;s pop-up menu in pixels, relative to the
+    stage origin (upper left).</font></font></p>
+    <p><font face="Times New Roman" size="3">When you set the XtrAgent member/icon property <b>PopupMenu</b>
+    to <b>False</b>, the Xtra no longer automatically displays the menu when the character or
+    its taskbar icon is right-clicked. You can use this method to display the menu.</font></p>
+    <p><font face="Times New Roman" size="3">The menu displays until the user selects a
+    command or displays another menu. Only one pop-up menu can be displayed at a time;
+    therefore, calls to this method will cancel (remove) the former menu.</font></p>
+    <p><font face="Times New Roman" size="3">This method should only be called when your
+    client application is the active client of the character; otherwise it fails.</font><font
+    FACE="Arial" SIZE="2"> </font></p>
+    <p><font face="Comic Sans MS" size="6"><strong>XtrAgent Sprite Events</strong></font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Comic Sans MS"><b>ActivateInputState</b></font></p>
+    <p><font face="Times New Roman" size="3">Notifies a sprite when its </font>character's
+    input active state changed.</p>
+    <p><i><b>Parameter:</b></i></p>
+    <p><i><b>Activated: </b></i>Input active flag. This Boolean value is <b>True</b> if the
+    character became input active; and <b>False</b> if the character lost its input active
+    state. </p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Comic Sans MS"><b>DragStart</b></font></p>
+    <p><font face="Times New Roman" size="3">Notifies a sprite when the user starts dragging
+    its character.</font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>X: </b></i><font face="Times New Roman" size="3">The x-coordinate of the mouse
+    pointer in pixels, relative to the stage origin (upper left).</font></p>
+    <p><i><b>Y: </b></i><font face="Times New Roman" size="3">The y-coordinate of the mouse
+    pointer in pixels, relative to the stage origin (upper left).</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Comic Sans MS"><b>DragComplete</b></font></p>
+    <p><font face="Times New Roman" size="3">Notifies a sprite when the user stops dragging
+    its character.</font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>X: </b></i><font face="Times New Roman" size="3">The x-coordinate of the mouse
+    pointer in pixels, relative to the stage origin (upper left).</font></p>
+    <p><i><b>Y: </b></i><font face="Times New Roman" size="3">The y-coordinate of the mouse
+    pointer in pixels, relative to the stage origin (upper left).</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Comic Sans MS"><b>Click</b></font></p>
+    <p><font face="Times New Roman" size="3">Notifies a sprite when the user clicks its
+    character or character's taskbar icon..</font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>X: </b></i><font face="Times New Roman" size="3">The x-coordinate of the mouse
+    pointer in pixels, relative to the stage origin (upper left).</font></p>
+    <p><i><b>Y: </b></i><font face="Times New Roman" size="3">The y-coordinate of the mouse
+    pointer in pixels, relative to the stage origin (upper left).</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Comic Sans MS"><b>DoubleClick</b></font></p>
+    <p><font face="Times New Roman" size="3">Notifies a sprite when the user double-clicks its
+    character.</font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>X: </b></i><font face="Times New Roman" size="3">The x-coordinate of the mouse
+    pointer in pixels, relative to the stage origin (upper left).</font></p>
+    <p><i><b>Y: </b></i><font face="Times New Roman" size="3">The y-coordinate of the mouse
+    pointer in pixels, relative to the stage origin (upper left).</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Comic Sans MS"><b>RequestStart</b></font></p>
+    <p><font face="Times New Roman" size="3">Notifies a sprite when a request begins. This
+    event enables you to track when a queued request begins.</font></p>
+    <p><i><b>Parameter:</b></i></p>
+    <p><i><b>RequestID: </b></i><font face="Times New Roman" size="3">Identifier of the
+    request that started.</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Comic Sans MS"><b>RequestComplete</b></font></p>
+    <p><font face="Times New Roman" size="3">Notifies a sprite when a request completes. This
+    event enables you to track when a queued method completes.</font></p>
+    <p><i><b>Parameter:</b></i></p>
+    <p><i><b>RequestID: </b></i><font face="Times New Roman" size="3">Identifier of the
+    request that completed.</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Comic Sans MS"><b>Command</b></font></p>
+    <p><font face="Times New Roman" size="3">Notifies a sprite that a Command was selected by
+    the user. </font></p>
+    <p><i><b>Parameter:</b></i></p>
+    <p><i><b>CommandID: </b></i><font face="Times New Roman" size="3">Identifier of the best
+    match command alternative.</font></p>
+    <p>XtrAgent notifies the input-active client when the user chooses a command by voice or
+    by selecting a command from the character's pop-up menu. The event occurs even when the
+    user selects one of the Agent's commands. In this case XtrAgent returns a zero command ID.</p>
+    <p><a name="Bookmark"></a></p>
+    <p><font size="2" face="Comic Sans MS"><b>Bookmark</b></font></p>
+    <font FACE="Arial" SIZE="2"><p></font><font face="Times New Roman" size="3">Notifies a
+    sprite when a bookmark completes.</font></p>
+    <p><i><b>Parameter:</b></i></p>
+    <p><i><b>BookmarkID: </b></i><font face="Times New Roman" size="3">Identifier of the
+    bookmark that resulted in triggering the event. </font></p>
+    <p><font face="Times New Roman" size="3">When you include bookmark tags in a <a
+    href="#Say"><b>Say</b></a> sprite method, you can track when they occur with this event.</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Comic Sans MS"><b>VisibleState</b></font></p>
+    <font FACE="Arial" SIZE="2"><p></font>Notifies a sprite when the visibility state of its
+    character changes.</p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>Visible: </b></i>Visibility flag. This Boolean value is <b>True</b> when
+    character becomes visible and <b>False</b> when the character becomes hidden. </p>
+    <p><i><b>Cause: </b></i>Cause of last change to the character's visibility state. The
+    parameter may be one of the following:</p>
+    <p><br>
+    <font face="Times New Roman" size="3"><strong>0 -</strong> </font>Character has not been
+    shown.<br>
+    <strong>1 -</strong> User hid the character with the character's taskbar icon pop-up menu
+    or with speech input.<br>
+    <strong>2 -</strong> User showed the character.<br>
+    <strong>3 -</strong> Your application hid the character.<br>
+    <strong>4 -</strong> Your application showed the character.<br>
+    <strong>5 -</strong> Another application hid the character.<br>
+    <strong>6 -</strong> Another application showed the character. <br>
+    <strong>7 -</strong> User hid the character with the character's pop-up menu.<br>
+    <strong>8 -</strong> User hid the character with the character's taskbar icon pop-up menu
+    or using speech input. </p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Comic Sans MS"><b>Move</b></font></p>
+    <font FACE="Arial" SIZE="2"><p></font>Notifies a sprite when its character has been moved.</p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>X: </b></i>The x-coordinate of the new position in pixels, relative to the stage
+    origin (upper left). The location of a character is based on the upper left corner of its
+    animation frame. </p>
+    <p><i><b>Y: </b></i>The y-coordinate of the new position in pixels, relative to the stage
+    origin (upper left). The location of a character is based on the upper left corner of its
+    animation frame. </p>
+    <p><i><b>Cause: </b></i>The cause of the character move. The parameter may be one of the
+    following:&nbsp; </p>
+    <p><font face="Times New Roman" size="3"><strong>0 -</strong> </font>Character has not
+    been moved.<br>
+    <strong>1 -</strong> User dragged the character.<br>
+    <strong>2 -</strong> Your application moved the character.<br>
+    <strong>3 -</strong> Another application moved the character.<br>
+    <strong>4 -</strong> XtrAgent moved the character to keep it onscreen after a screen
+    resolution change. </p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Comic Sans MS"><b>ActiveClientChange</b></font></p>
+    <font FACE="Arial" SIZE="2"><p></font>Notifies a sprite when your application is no longer
+    the active client of its character.</p>
+    <p><i><b>Parameter:</b></i></p>
+    <p><i><b>Status: </b></i>Active state change of the client, which can be a combination of
+    any of the following values:</p>
+    <p><font face="Times New Roman" size="3"><strong>0 -</strong> </font>Your client is not
+    the active client of the character. <br>
+    <strong>1 -</strong> Your client is the active client of the character.<br>
+    <strong>2 -</strong> Your client is input-active (active client of the topmost character).</p>
+    <p>When multiple client applications share the same character, the active client of the
+    character receives mouse input. Similarly, when multiple characters are displayed, the
+    active client of the topmost character (also known as the input-active client) receives <b>Command</b>
+    events. </p>
+    <p>When the active client of a character changes, this event passes back <b>True</b> if
+    your application has become the active client of the character or <b>False</b> if it is no
+    longer the active client of the character.</p>
+    <p>A client application may receive this event when the user selects another client
+    application's entry in character's pop-up menu or by voice command, the client application
+    changes its active status, or another client application quits its connection to Microsoft
+    Agent. Agent sends this event only to the client applications that are directly affected
+    -- those that either become the active client or stop being the active client. </p>
+    <p>You can use the <b>Activate</b> sprite method to set whether your application is the
+    active client of the character or to make your application the input-active client (which
+    also makes the character topmost).</p>
+    <p><font size="2" face="Comic Sans MS"><b>ListeningState</b></font></p>
+    <font FACE="Arial" SIZE="2"><p></font>Notifies a sprite when the Listening mode changes.</p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>Listening: </b></i>The Listening mode state. <b>True</b> indicates that Listening
+    mode has started; <b>False</b>, that Listening mode has ended. </p>
+    <p><i><b>Cause: </b></i>The cause for the event, which may be one of the following values.
+    </p>
+    <p><font face="Times New Roman" size="3"><strong>1 -</strong> </font>Listening mode was
+    turned off by program code.<br>
+    <strong>2 -</strong> Listening mode (turned on by program code) timed out. <br>
+    <strong>3 -</strong> Listening mode (turned on by the Listening key) timed out.<br>
+    <strong>4 -</strong> Listening mode was turned off because the user released the Listening
+    key. <br>
+    <strong>5 -</strong> Listening mode was turned off because the user finished speaking. <br>
+    <strong>6 -</strong> Listening mode was turned off because the input active client was
+    deactivated.<br>
+    <strong>7 -</strong> Listening mode was turned off because the default character was
+    changed.<br>
+    <strong>8 -</strong> Listening mode was turned off because the user disabled speech input.</p>
+    <p>This event is sent to all input-active sprites when the Listening mode begins after the
+    user presses the Listening key or when its time-out ends, or when the input-active client
+    calls the <b>Listen</b> sprite method with <b>True</b> or <b>False</b>. </p>
+    <p><font size="2" face="Comic Sans MS"><b>DefaultCharacterChange</b></font></p>
+    <font FACE="Arial" SIZE="2"><p></font>Notifies a sprite when the default character
+    changes.</p>
+    <p><i><b>Parameter:</b></i></p>
+    <p><i><b>GUID: </b></i>The unique identifier for the character.</p>
+    <p>When the user changes the character assigned as the user's default character, XtrAgent
+    sends this event to clients that have loaded the default character. The event returns the
+    character's unique identifier (GUID) formatted with braces and dashes, which is defined
+    when the character is built with the Microsoft Agent Character Editor. </p>
+    <p>When the new character appears, it assumes the same size as any already loaded instance
+    of the character or the previous default character (in that order).</p>
+    <h1><font face="Comic Sans MS">XtrAgent Member/Icon Properties</font></h1>
+    <p><font FACE="Arial" SIZE="2"><b>&nbsp;</p>
+    <p>XtrAgent member properties are read/write unless otherwise specified. If a property
+    cannot be retrieved the result value is zero.</p>
+    <p></b></font>&nbsp;</p>
+    <p><b><font size="2" face="Comic Sans MS">File</font></b></p>
+    <p><font size="3" face="Times New Roman">The pathname of the linked character file, an
+    empty string for the default character, or comma (&quot;,&quot;) for no character file.</font><font
+    size="2"></p>
+    <p></font><font size="3" face="Times New Roman">This property is &quot;*&quot; if
+    Microsoft Agent 2.0 or later is not installed.</font><font size="2"></p>
+    <p></font><font size="3" face="Times New Roman">When you load a movie that contains Agent
+    member/icon, and its character file is not in the original location, XtrAgent uses
+    Director's/Authorware's standard filename resolution algorithm to find it. This includes
+    scanning the searchPaths and moviePath folders for the appropriate file. If after this
+    process the file was still not found, XtrAgent searches the Agent's characters directory
+    for it.</font><font size="2"></p>
+    <p></font><font size="3" face="Times New Roman">If the file could not be found in any of
+    those locations, this property is being set to comma (&quot;,&quot;). If the file was
+    found in the Agent's characters directory, this property is being set to the name of the
+    character file, without the full path to it.<br>
+    If you set this property from your script, XtrAgent first unloads the character associated
+    with the member/icon (if any), and then try to load the new one. </font><font size="2"></p>
+    </font><p>You can load characters from the Microsoft Agent subdirectory by specifying a
+    relative path (one that does not include a colon or leading slash character). This
+    prefixes the path with Agent's characters directory (located in the localized
+    %windows%\msagent directory). You can also use a relative address to specify your own
+    directory in Agent's Chars directory.</p>
+    <p>Setting this property to an empty string will load the default character, if one is
+    available.</p>
+    <b><font face="Arial" size="2"><p></font><font size="2" face="Comic Sans MS">TTSSpeed</font></b></p>
+    <font face="Arial" size="2"><p></font><font size="3" face="Times New Roman">This property
+    returns the current speaking output speed setting for the character, in words per minute.
+    For characters using TTS output, the property returns the actual TTS output for the
+    character. If TTS is not enabled or the character does not support TTS output, the setting
+    reflects the user setting for output speed.</font></p>
+    <p><font size="3" face="Times New Roman">This property is read-only, your application
+    cannot set it, but you can include <a href="speechoutputtags.htm#SPD">speed tags</a> in
+    your output text that will temporarily speed up the output for a particular utterance.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>TTSPitch</b></font></p>
+    <font face="Arial" size="2"><p></font><font size="3" face="Times New Roman">This property
+    returns the current speaking output pitch setting for the character, in Hertz. If the
+    speech synthesis (TTS) engine is not enabled (or installed) or the character does not
+    support TTS output, the result value is zero (0).</font></p>
+    <p><font size="3" face="Times New Roman">This property is read-only, your application
+    cannot set it, but you can include <a href="speechoutputtags.htm#PIT">pitch tags</a> in
+    your output text that will temporarily increase the pitch for a particular utterance. </font></p>
+    <p><font size="2" face="Comic Sans MS"><b>SoundFX</b></font></p>
+    <p><font size="3" face="Times New Roman">This property is TRUE if the character's sound
+    effects setting is enabled and FALSE if disabled.</font></p>
+    <p><font size="3" face="Times New Roman">The character's sound effects setting determines
+    whether sound effects compiled as a part of the character it presents are played when you
+    play an associated animation. The setting is subject to the user&#146;s global sound
+    effects setting.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>OtherClients</b></font></p>
+    <font face="Arial" size="2"><p></font><font size="3" face="Times New Roman">The number of
+    other connected clients to the character (total number of clients minus your client).</font></p>
+    <p><font size="3" face="Times New Roman">This property is read-only.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>CharacterName</b></font></p>
+    <p><font size="3" face="Times New Roman">The name of the character. A character&#146;s
+    default name is defined when it is compiled with the Microsoft Agent Character Editor. A
+    character&#146;s name may vary based on the character&#146;s language ID. Characters can
+    be compiled with different names for different languages.</font></p>
+    <p><font size="3" face="Times New Roman">You can change the character&#146;s name,
+    however,&nbsp; this changes the character name for all current clients of the character.
+    This property is not persistent (stored permanently). The character&#146;s name reverts to
+    its default name whenever the character is first loaded by a client.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>Description</b></font></p>
+    <p><font size="3" face="Times New Roman">The character&#146;s description. A
+    character&#146;s default description is defined when it is compiled with the Microsoft
+    Agent Character Editor. The description setting is optional and may not be supplied for
+    all characters. </font></p>
+    <p><font size="3" face="Times New Roman">You can change the character&#146;s description,
+    however, this value is not persistent (stored permanently). The character&#146;s
+    description reverts to its default setting whenever the character is first loaded by a
+    client.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>ExtraData</b></font></p>
+    <font face="Arial" size="2"><p></font><font size="3" face="Times New Roman">Additional
+    data stored as part of the character. A character&#146;s additional data is defined when
+    it is compiled with the Microsoft Agent Character Editor.&nbsp; A character developer can
+    supply this string by editing the .ACD file for a character. The setting is optional and
+    may not be supplied for all characters, nor can the data be defined or changed at run
+    time. In addition, the meaning of the data supplied is defined by the character developer.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>AutoIdle</b></font></p>
+    <p><font size="3" face="Times New Roman">Automatic idle processing for a member/icon. If
+    TRUE, XtrAgent automatically plays Idling state animations.</font></p>
+    <p><font size="3" face="Times New Roman">The Xtra automatically sets a time out after the
+    last animation played for a character. When this timer&#146;s interval is complete, the
+    Xtra begins the Idling states for a character, playing its associated Idling animations at
+    regular intervals. If you want to manage the Idling state animations yourself, set this
+    property to FALSE.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>PopupMenu</b></font><font size="3"
+    face="Times New Roman"> </font></p>
+    <font face="Arial" size="2"><p></font><font size="3" face="Times New Roman">Automatic
+    display of the character&#146;s pop-up menu. True if XtrAgent automatically handles
+    displaying the character&#146;s pop-up menu and False if not.</font></p>
+    <p><font size="3" face="Times New Roman">This property applies only to your client
+    application&#146;s use of the character; the setting does not affect other clients of the
+    character or other characters of your client application.</font></p>
+    <font face="Arial" size="2"><p></font><font size="3" face="Times New Roman">By setting
+    this property to False, you can create your own menu-handling behavior. To display the
+    menu after setting this property to False, use the <strong>ShowPopupMenu</strong> sprite
+    method.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>TTSModeID</b></font></p>
+    <font face="Arial" size="2"><p></font><font size="3" face="Times New Roman">The mode ID
+    setting of the TTS (text-to-speech) engine for the character. </font></p>
+    <font size="3"><p><font face="Times New Roman">This setting determines the preferred
+    engine mode for a character&#146;s spoken TTS output. The mode ID for a TTS engine is the
+    GUID defined by the speech vendor that uniquely identifies the mode of the engine
+    (formatted with braces and dashes). </font></font></p>
+    <font size="3"><p><font face="Times New Roman">If you set a TTS mode ID, it overrides the
+    XtrAgent attempt to match a speech engine based on the character&#146;s compiled TTS mode
+    ID, the current system language ID, and the character&#146;s current language ID. However,
+    if you attempt to set a mode ID when the user has disabled speech output in the Microsoft
+    Agent property sheet or when the associated engine is not installed, such a call will
+    fail. </font></font></p>
+    <p><font face="Times New Roman" size="3">If you do not set a TTS engine mode ID for the
+    character, XtrAgent attempts to set an engine that matches the character&#146;s compiled
+    TTS setting and the character&#146;s current language setting. If these are different,
+    then the character&#146;s language setting overrides its authored mode setting. If you
+    have not set the character&#146;s language setting, the character&#146;s language is the
+    user default language ID, and XtrAgent attempts the match based on that language ID.</font></p>
+    <p><font face="Times New Roman" size="3">This property applies to only your client
+    application&#146;s use of the character; the setting does not affect other clients of the
+    character or other characters of your client application. </font></p>
+    <font size="3"><p><font face="Times New Roman">Microsoft Agent&#146;s speech engine
+    requirements are based on the Microsoft Speech API. Engines supporting Microsoft
+    Agent&#146;s SAPI requirements can be installed and used with Agent.</font></font></p>
+    <font size="3"><b><p></b><font face="Times New Roman">Note: Setting this property can fail
+    if Speech.dll is not installed and the engine you specify does not match the character's
+    compiled TTS mode setting.</font></font></p>
+    <p><font size="2" face="Comic Sans MS"><b>SRModeID</b></font></p>
+    <p><font face="Times New Roman" size="3">The mode ID setting of the speech recognition
+    engine for the character.</font></p>
+    <p><font face="Times New Roman" size="3">This setting determines the engine set for a
+    character&#146;s speech input. The mode ID for a speech recognition engine is a string
+    representation of the GUID (formatted with braces and dashes) by the speech vendor
+    uniquely identifying the engine.</font></p>
+    <font size="3"><p><font face="Times New Roman">If you specify a mode ID that does not
+    match the character&#146;s language setting, if the user has disabled speech recognition
+    (in the Microsoft Agent property sheet), or the engine is not installed, such a call will
+    fail. </font></font></p>
+    <p><font face="Times New Roman" size="3">If you do not set a speech recognition engine
+    mode ID for the character, XtrAgent sets an engine that matches the character&#146;s
+    language setting. If there is no matching speech recognition engine available for the
+    character the property is being set to an empty string.</font></p>
+    <p><font face="Times New Roman" size="3">When speech input is enabled (in the Advanced
+    Character Options window), querying or setting this property will load the associated
+    engine (if it is not already loaded), and start speech services. That is, the Listening
+    key is available, and the Listening Tip is displayable. (The Listening key and Listening
+    Tip are enabled only if they are also enabled in Advanced Character Options.) However, if
+    you query the property when speech is disabled, XtrAgent does not start speech services
+    and it returns an empty string.</font></p>
+    <p><font face="Times New Roman" size="3">This property applies to only your client
+    application&#146;s use of the character; the setting does not affect other clients of the
+    character or other characters of your client application. </font></p>
+    <p><font face="Times New Roman" size="3">Microsoft Agent&#146;s speech engine requirements
+    are based on the Microsoft Speech API. Engines supporting Microsoft Agent&#146;s SAPI
+    requirements can be installed and used with Agent.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>SRStatus</b></font></p>
+    <p>The status of the condition necessary to support speech input. Can be one of the
+    following values:</p>
+    <p><strong>0 -</strong> Conditions support speech input.<br>
+    <strong>1 -</strong> There is no audio input device available on this system. (Note that
+    this does not detect whether a microphone is installed; it can only detect whether the
+    user has a properly installed input-enabled sound card with a working driver.) <br>
+    <strong>2 -</strong> Another client is the active client of this character, or the current
+    character is not topmost.<br>
+    <strong>3 -</strong> The audio input or output channel is currently busy, some other
+    application is using audio. <br>
+    <strong>4 -</strong> An unspecified error occurred in the process of initializing the
+    speech recognition subsystem. This includes the possibility that there is no speech engine
+    available matching the character's language setting.<br>
+    <strong>5 -</strong> The user has disabled speech input in the Advanced Character Options
+    window. <br>
+    <strong>6 -</strong> An error occurred in checking the audio status, but the cause of the
+    error was not returned by the system. </p>
+    <p>This property enables you to query whether current conditions support speech
+    recognition input, including the status of the audio device. If your application uses the <b>Listen</b>
+    sprite method, you can use this function to better ensure that the call will succeed.
+    Calling this method also loads the speech engine if it is not already loaded. However, it
+    does not turn on Listening mode.</p>
+    <p>When speech input is enabled in the Agent property sheet (Advanced Character Options),
+    querying the status will load the associated engine (if it is not already loaded), and
+    start speech services. That is, the Listening key is available, and the Listening Tip is
+    displayable. (The Listening key and Listening Tip are enabled only if they are also
+    enabled in Advanced Character Options.) However, if you query the property when speech is
+    disabled, Agent does not start speech services.</p>
+    <p>This function returns only the setting for your client application's use of the
+    character; the setting does not reflect other clients of the character or other characters
+    of your client application. Your application cannot set this property.</p>
+    <p><font size="2" face="Comic Sans MS"><b>SRHotKey</b></font></p>
+    <p><font face="Times New Roman" size="3">The current hot key setting used to open the
+    audio channel for speech input. This property is read-only.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>CommandsCaption</b></font></p>
+    <font face="Arial" size="2"><p></font><font face="Times New Roman" size="3">The Caption
+    text displayed for the character's Commands collection.</font></p>
+    <p>Setting this property for a c<font face="Times New Roman" size="3">haracter's</font>
+    Commands collection defines how it will appear on the character's pop-up menu when its <b>CommandVisible</b>
+    property is set to <b>True</b> and your application is not the input-active client. To
+    specify an access key (unlined mnemonic) for your <b>CommandsCaption</b>, include an
+    ampersand (&amp;) character before that character.&nbsp; </p>
+    <p><font size="2" face="Comic Sans MS"><b>CommandsVoice</b></font></p>
+    <p><font face="Times New Roman" size="3">The Voice text setting for the character's
+    Commands collection.</font></p>
+    <p><font face="Times New Roman" size="3">A Commands collection must have its <b>CommandsVoice</b>
+    text property set to be voice-accessible. It also must have its <b>CommandsCaption</b>
+    property set to appear in the Commands Window and its <b>CommandsVisible</b> property set
+    to TRUE to appear on the character&#146;s pop-up menu.</font></p>
+    <p><font face="Times New Roman" size="3">The string you supply to set this property can
+    include square bracket characters ([ ]) to indicate optional words and vertical bar
+    characters (|) to indicate alternative strings. Alternates must be enclosed in
+    parentheses. For example, &quot;(hello [there] | hi)&quot; tells the speech engine to
+    accept &quot;hello,&quot; &quot;hello there,&quot; or &quot;hi&quot; for the command.
+    Remember to include appropriate spaces between words you include in brackets or
+    parentheses as well as other text. Remember to include appropriate spaces between the text
+    that's in brackets or parentheses and the text that's not in brackets or parentheses.</font></p>
+    <p>You can use the star (*) operator to specify zero or more instances of the words
+    included in the group or the plus (+) operator to specify one or more instances. For
+    example, the following results in a grammar that supports &quot;try this&quot;,
+    &quot;please try this&quot;, and &quot;please please try this&quot;, with unlimited
+    iterations of &quot;please&quot;: </p>
+    <p>&quot;please* try this&quot;</p>
+    <p>The following grammar format excludes &quot;try this&quot; because the + operator
+    defines at least one instance of &quot;please&quot;: </p>
+    <p>&quot;please+ try this&quot;</p>
+    <p>The repetition operators follow normal rules of precedence and apply to the immediately
+    preceding text item. For example, the following grammar results in &quot;New York&quot;
+    and &quot;New York York&quot;, but not &quot;New York New York&quot;: </p>
+    <p>&quot;New York+&quot;</p>
+    <p>Therefore, you typically want to use these operators with the grouping characters. For
+    example, the following grammar includes both &quot;New York&quot; and &quot;New York New
+    York&quot;: </p>
+    <p>&quot;(New York)+&quot;</p>
+    <p>Repetition operators are useful when you want to compose a grammar that includes a
+    repeated sequence such as a phone number or specification of a list of items:</p>
+    <p>&quot;call (one|two|three|four|five|six|seven|eight|nine|zero|oh)*&quot; <br>
+    &quot;I'd like (cheese|pepperoni|pineapple|canadian bacon|mushrooms|and)+&quot;</p>
+    <p>Although the operators can also be used with square brackets (an optional grouping
+    character), doing so may reduce the efficiency of Agent's processing of the grammar.</p>
+    <p><font face="Times New Roman" size="3">You can also use an ellipsis (&#133;) to support <i>word
+    spotting</i>, that is, telling the speech recognition engine to ignore words spoken in
+    this position in the phrase (sometimes called <i>garbage</i> words). When you use
+    ellipses, the speech engine recognizes only specific words in the string regardless of
+    when spoken with adjacent words or phrases. For example, if you set this property to
+    &quot;&#133;check mail&#133;&quot; the speech recognition engine will match phrases like
+    &quot;please check mail&quot; or &quot;check mail please&quot; to this command. Ellipses
+    can be used anywhere within a string. However, be careful using this technique as voice
+    settings with ellipses may increase the potential of unwanted matches. </font></p>
+    <p><font face="Times New Roman" size="3">When defining the words and grammar for your
+    command, always make sure that you include at least one word that is required; that is,
+    avoid supplying only optional words. In addition, make sure that the word includes only
+    pronounceable words and letters. For numbers, it is better to spell out the word rather
+    than using the numeric representation. </font>For example, &quot;345&quot; is not a good
+    grammar form. Similarly, instead of &quot;IEEE&quot;, use &quot;I triple E&quot;. Also,
+    omit any punctuation or symbols. For example, instead of &quot;the #1 $10 pizza!&quot;,
+    use &quot;the number one ten dollar pizza&quot;. Including non-pronounceable characters or
+    symbols for one command may cause the speech engine to fail to compile the grammar for all
+    your commands. Finally, make your voice parameter as distinct as reasonably possible from
+    other voice commands you define. The greater the similarity between the voice grammar for
+    commands, the more likely the speech engine will make a recognition error. You can also
+    use the confidence scores to better distinguish between two commands that may have similar
+    or similar-sounding voice grammar.</p>
+    <p>You can include in your grammar words in the form of &quot;<i>text\pronunciation</i>&quot;,
+    where &quot;text&quot; is the text displayed and &quot;pronunciation&quot; is text that
+    clarifies the pronunciation. For example, the grammar, &quot;1st\first&quot;, would be
+    recognized when the user says &quot;first,&quot; but the <b>Command</b> event will return
+    the text, &quot;1st\first&quot;. You can also use IPA (International Phonetic Alphabet) to
+    specify a pronunciation by beginning the pronunciation with a pound-sign character
+    (&quot;#&quot;), then the text representing the IPA pronunciation.</p>
+    <p>For Japanese speech recognition engines, you can define grammar in the form &quot;<i>kana\kanji</i>,&quot;
+    reducing the alternative pronunciations and increasing the accuracy. (The ordering is
+    reversed for backward compatibility.) This is particularly important for the pronunciation
+    of proper names in Kanji. However, you can just pass in &quot;kanji,&quot; without the
+    Kana, in which case the engine should listen for all acceptable pronunciations for the
+    Kanji. You can also pass in just Kana. </p>
+    <p>Except for errors using the grouping or repetition formatting characters, Microsoft
+    Agent will not report errors in your grammar, unless the engine itself reports the error.
+    If you pass text in your grammar that the engine fails to compile, but the engine does not
+    handle and return as an error, Agent cannot report the error. Therefore, the client
+    application must be careful defining the grammar for the this property.</p>
+    <p><b>Notes</b><strong>:</strong> The grammar features available may depend on the speech
+    recognition engine. You may want to check with the engine's vendor to determine what
+    grammar options are supported. Use the <strong>SRModeID</strong> to use a specific engine.
+    </p>
+    <p>The operation of this property depends on the state of Microsoft Agent server's speech
+    recognition state. For example, if speech recognition is disabled or not installed, this
+    function has no immediate effect. If speech recognition is enabled during a session,
+    however, the command will become accessible when its client application is input-active. </p>
+    <p><font size="2" face="Comic Sans MS"><b>CommandsVisible</b></font></p>
+    <font face="Arial" size="2"><p></font><font face="Times New Roman" size="3">The Visible
+    property for a Commands collection. TRUE sets the Commands collection&#146;s Caption to be
+    visible when the character&#146;s pop-up menu is displayed; FALSE does not display it.</font></p>
+    <p><font face="Times New Roman" size="3">A Commands collection must have its <strong>CommandsCaption</strong>
+    property set and its <strong>CommandsVisible</strong> property set to TRUE to appear on
+    the character&#146;s pop-up menu. The <strong>CommandsVisible</strong> property must also
+    be set to TRUE for commands in the collection to appear when your client application is
+    input-active.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Comic Sans MS" size="6"><strong>XtrAgent Member/Icon Methods</strong></font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Comic Sans MS"><b>AddCommand ( Member X, String Caption, String
+    Voice, Integer Enabled, Integer Visible )</b></font></p>
+    <font face="Arial" size="2"><p></font><font face="Times New Roman" size="3">Adds a Command
+    to a Commands collection. Returns the added Command ID if succeeded, void if not.</font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>Caption:<font face="Times New Roman" size="3"> </b></i>Specifies the Caption text
+    displayed for a Command in a Commands collection.</font></p>
+    <p><i><b>Voice: </b></i><font face="Times New Roman" size="3">Specifies the Voice text
+    setting for a Command in a Commands collection. Refer to the <strong>CommandsVoice</strong>
+    property for more information on how to specify this parameter.</font></p>
+    <p><i><b>Enabled: </b></i><font face="Times New Roman" size="3">A Boolean expression that
+    specifies the Enabled setting for a Command in a Commands collection. If the parameter is
+    TRUE, the Command is enabled and can be selected; if FALSE, the Command is disabled.</font></p>
+    <p><i><b>Visible: </b></i><font face="Times New Roman" size="3">A Boolean expression that
+    specifies the Visible setting for a Command in a Commands collection. If the parameter is
+    TRUE, the Command will be visible in the character&#146;s pop-up menu (if the Caption
+    property is also set).</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>RemoveCommand ( Member X, Integer CommandID )</b></font></p>
+    <font face="Arial" size="2"><p></font><font face="Times New Roman" size="3">Removes the
+    specified Command from a Commands collection. Removing a Command from a Commands
+    collection also removes it from the pop-up menu and the Commands Window when your
+    application is input-active. Returns 1 if succeeded, void if not.</font></p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>CommandID: </b></i><font face="Times New Roman" size="3">The ID of a Command to
+    remove from the Commands collection.</font></p>
+    <p><font size="2" face="Comic Sans MS"><b>ShowDefaultCharacterProperties ( Member X,
+    Integer X, Integer Y, Integer Default )</b></font></p>
+    <font face="Arial" size="2"><p></font>Displays default character properties window.</p>
+    <p><i><b>Parameters:</b></i></p>
+    <p><i><b>X: </b></i>The x-coordinate of the window in pixels, relative to the screen
+    origin (upper left). </p>
+    <p><i><b>Y: </b></i>The y-coordinate of the window in pixels, relative to the screen
+    origin (upper left). </p>
+    <p><i><b>Default: </b></i>Default position flag. If this parameter is <b>True</b>,
+    XtrAgent displays the property sheet window for the default character at the last location
+    it appeared. </p>
+    <p>&nbsp;</p>
+    <p><font face="Comic Sans MS" size="6"><strong>Creating Projectors</strong></font></p>
+    <p>It's highly not recommended to embed XtrAgent with your projector(s)/package(s).
+    Instead, <font face="Times New Roman" size="3">place its run-time version in a folder
+    named &quot;Xtras&quot;, located in the directory where your projector/package file is. </font></p>
+    <p><font face="Times New Roman" size="3">Be sure not to embed the authoring version of
+    XtrAgent in a projector/package as it cannot work and distributed with them.</font></p>
+    <p><font face="Times New Roman" size="3">To prevent problems with palettes in Director 5/6
+    you should include with each projector a copy of the modified DIRECTOR.INI file you
+    created following the instructions in the Getting Started section. The .ini file should be
+    renamed to match the name of the Projector file.</font></p>
+    <p><font face="Times New Roman" size="3">XtrAgent uses Director's/Authorware's standard
+    filename resolution algorithm to locate linked character files. This includes scanning the
+    searchPaths and the moviePath folders. If after this process the file still cannot be
+    found, XtrAgent searches the </font>Agent's characters directory for the character file.</p>
+    <p><font face="Comic Sans MS" size="6"><strong>Using XtrAgent with Shockwave movies on the
+    Web</strong></font></p>
+    <p>You can license the auto-downloadable Shockwave safe version of XtrAgent to provide it
+    for automatic download from your Web site.</p>
+    <p>The auto-downloadable Shockwave safe versions are the files <br>
+    XtrAgent.w32 (Windows) and XtrAgent.ppc (MacOS). Note that the Xtra is only available for
+    Windows, but the package is available for both platforms. The MacOS package is empty and
+    required by Macromedia when authoring movies. It will never be downloaded to an end user's
+    machine.</p>
+    <p><br>
+    In order provide the Shockwave versions for automatic download, you'll need to put them in
+    a single location on a server. eg:<br>
+    http://www.myserver.com/packs/XtrAgent.ppc<br>
+    http://www.myserver.com/packs/XtrAgent.w32<br>
+    <br>
+    Then modify the xtrainfo.txt file in the Director 7 folder to reference this location eg:<br>
+    <br>
+    ; DirectXtras<br>
+    [#namePPC:&quot;XtrAgent.ppc&quot;,
+    #nameW32:&quot;XtrAgent.X32&quot;,#package:&quot;http://www.myserver.com/packs/XtrAgent&quot;]<br>
+    <br>
+    Finally, add a reference to the package in your movie. <br>
+    Open a movie that uses XtrAgent. From the Modify\Movie\Xtras dialog in director, <br>
+    select the xtra in the list of xtras. The &quot;Download if needed&quot; checkbox should <br>
+    now be enabled. (If it's not enabled, make sure the filename in xtrainfo.txt matches <br>
+    the actual filename for the xtra.) Click on the checkbox and director will load <br>
+    information from the package file for each platform and add it to the current movie. </p>
+    <p><font face="Comic Sans MS" size="6"><strong>Licensing and Distribution</strong></font></p>
+    <p>Application developers who want to freely distribute Microsoft Agent services and any
+    of its components (including Microsoft Agent character files and speech engines) as part
+    of their application or from their own server must complete a distribution license for
+    Microsoft Agent. For more information on licensing requirements for Microsoft Agent, see
+    the Licensing document at the Microsoft Agent Web site at <a
+    href="http://msdn.microsoft.com/msagent/licensing.asp">http://msdn.microsoft.com/msagent/licensing.asp</a>.</p>
+    <p>&nbsp;</p>
+    <p><font face="Times New Roman" size="4"><strong>Important note on XtrAgent sprites :</strong></font><font
+    face="Times New Roman" size="3"> </font></p>
+    <p><font face="Times New Roman" size="3">Due to limitation in Microsoft Agent, you can <strong>not
+    </strong>have more than one sprite in a frame, that's associate with the same character.
+    To get around this limitation, you can use the character editor to compile two different
+    files with different GUID, from the same character sources, import both of them to
+    Director/Authorware and work with them as they were two different characters, although
+    they will look and behave the same. </font></p>
+    <p><font face="Times New Roman" size="4"><strong>Important note on Director 6 and XtrAgent
+    sound system:</strong></font></p>
+    <p>The soundKeepDevice Lingo property in Director 6 tells Director whether or not to hold
+    onto the sound device after a sound finishes playing. If it is set to true, and Director 6
+    uses DirectSound to mix sounds (when both DirectSound and Intel RSX drivers are
+    installed), Director doesn't release the sound device. This is the default for Director 6,
+    because it reduces the overhead of initializing the sound layers, grabbing the sound
+    device, etc. each time a new sound plays.</p>
+    <p>Since XtrAgent needs the sound device to produce speech and to play WAV files, it's
+    important that you set the soundKeepDevice to FALSE if you intend to play Director sounds
+    and use XtrAgent in the same Director 6 movie.</p>
+    <p>The soundKeepDevice command does not affect whether Director uses RSX or not. If RSX is
+    installed on a machine, it is always used. </p>
+    <p><font face="Times New Roman" size="4"><strong>Important note on trails in Director 5/6
+    :</strong></font><font face="Times New Roman" size="3"> </font></p>
+    <p>When dragging a character outside of its sprite rectangle, trails are <br>
+    sometimes being left on the Director 5/6 stage, until you click on it to refresh it. This
+    is a result of the way Director 5/6 use to update its stage area.<br>
+    </p>
+    <p>The problem does not exist in Authorware and Director 7 or later.<br>
+    </p>
+    <p>To force Director to redraw the stage area and clear the trails, call <br>
+    from lingo: &quot;Set the stageColor to the stageColor&quot; while the character <br>
+    is being dragged.</p>
+    <p>&nbsp;</p>
+    <p><big>Further information on Microsoft Agent technology can be found in the <a
+    href="http://msdn.microsoft.com/msagent/default.asp" target="_blank">Microsoft Agent
+    HomePage.</a></big></td>
+  </tr>
+  <tr>
+    <td align="center" width="479"><hr>
+    <p><font size="2">Copyright © 1996-1999 DirectXtras Inc. All Rights Reserved.</font></td>
+  </tr>
+  <tr>
+    <td align="center" width="479"><b><i>DirectXtras Inc.<br>
+    </i></b>P.O Box 423417 San Francisco, CA 94142-3417<br>
+    <b>Voice:</b> +1-415-5058249, <b>Fax:</b> +1-650-9384633<br>
+    <b>E-mail General information:</b> <a href="mailto:info@directxtras.com"><i>info@directxtras.com<br>
+    </i></a><b>E-mail Technical Support:</b> <a href="mailto:supp@directxtras.com"><i><u>supp@directxtras.com</u></i></a>
+    </td>
+  </tr>
+  <tr>
+    <td width="479"></td>
+  </tr>
+</table>
+
+<p align="left">&nbsp;</p>
+</body>
+</html>
